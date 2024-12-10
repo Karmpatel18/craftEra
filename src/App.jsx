@@ -1,6 +1,6 @@
 import Header from './components/Header';
-
-
+import SearchBar from './components/SearchBar';
+import Category from './components/Category';
 function App() {
   
 
@@ -8,7 +8,7 @@ function App() {
     <>
       
       <Header />
-      <div className='ml-6 mr-6 font-poppins  bg-green-200/50  h-[694px] flex   flex-col rounded-2xl'>
+      <div className='ml-6 mr-6 font-poppins  bg-sky-200/50  h-[694px] flex   flex-col rounded-2xl'>
         <div className='flex mt-64 flex-row justify-center items-center space-x-6'>
         <div className='flex   text-center  font-bold text-6xl '>
           Unleash 
@@ -38,7 +38,13 @@ function App() {
               <img className="w-8 h-8 animate-bounce text-white opacity-20"  src="/public/assets/down-arrow.svg"/>
         </div>
       </div>
-      
+
+
+      {/* search section */}
+      <div className="flex ml-8 mt-10 space-x-4">
+        <SearchBar/>
+        <Category/>
+      </div>
       
     </>
   )
