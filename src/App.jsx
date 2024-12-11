@@ -1,6 +1,7 @@
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import Category from './components/Category';
+import Cards from './components/Cards';
 function App() {
   
 
@@ -45,6 +46,8 @@ function App() {
         <SearchBar/>
         <Category/>
       </div>
+      <Cards/>
+      
       
     </>
   )
