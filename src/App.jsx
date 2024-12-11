@@ -46,8 +46,14 @@ function App() {
         <SearchBar/>
         <Category/>
       </div>
+      <div className='flex flex-row'>
+      <Cards cardTitle="painting 1" productPrice="1299"/>
+      <Cards/>
+      <Cards/>
       <Cards/>
       
+      
+      </div>
       
     </>
   )
