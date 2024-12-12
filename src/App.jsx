@@ -2,6 +2,7 @@ import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import Category from './components/Category';
 import Cards from './components/Cards';
+import BuyCart from './components/BuyCart';
 function App() {
   
 
@@ -9,7 +10,7 @@ function App() {
     <>
       
       <Header />
-      <div className='ml-6 mr-6 font-poppins  bg-sky-200/50  h-[694px] flex   flex-col rounded-2xl'>
+      <div className='ml-6 mr-6 font-poppins  bg-slate-200/50  h-[694px] flex   flex-col rounded-2xl'>
         <div className='flex mt-64 flex-row justify-center items-center space-x-6'>
         <div className='flex   text-center  font-bold text-6xl '>
           Unleash 
@@ -42,6 +43,11 @@ function App() {
 
 
       {/* search section */}
+      <div className='my-12 border-t-2 border-gray-900'>
+
+      </div>
+
+
       <div className="flex ml-8 mt-10 space-x-4">
         <SearchBar/>
         <Category/>
@@ -54,7 +60,7 @@ function App() {
       
       
       </div>
-      
+      <BuyCart/>
     </>
   )
 }

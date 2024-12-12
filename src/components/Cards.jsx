@@ -4,7 +4,7 @@ function Cards(props) {
   
   return (
     <div className='font-poppins p-8'>
-      <div className='bg-slate-200 h-full w-64 rounded-xl   hover:shadow-xl duration-500'>
+      <div className='bg-slate-200/50 h-full w-64 rounded-xl   hover:shadow-xl duration-500'>
         <div className='p-2'>
           <img className='rounded-[6px] max-fit'src="https://images.pexels.com/photos/1509534/pexels-photo-1509534.jpeg?auto=compress&cs=tinysrgb&w=800="/>
         </div>
