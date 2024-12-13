@@ -2,6 +2,8 @@ import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import Category from './components/Category';
 import Cards from './components/Cards';
+import Footer from './components/Footer';
+import './style.css';
 function App() {
   
 
@@ -47,6 +49,9 @@ function App() {
         <Category/>
       </div>
       <Cards/>
+      <div>
+        <Footer/>
+      </div>
       
       
     </>
