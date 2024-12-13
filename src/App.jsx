@@ -5,6 +5,7 @@ import Category from './components/Category';
 import Cards from './components/Cards';
 import LoginPage from './components/signup'; // Create this component
 import SignUpPage from './components/login'; // Create this component
+import BuyCart from './components/BuyCart';
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
                 <Cards />
                 <Cards />
               </div>
+              <BuyCart />
             </>
           }
         />
