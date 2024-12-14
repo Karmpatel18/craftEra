@@ -7,6 +7,11 @@ import LoginPage from './components/signup'; // Create this component
 import SignUpPage from './components/login'; // Create this component
 import BuyCart from './components/BuyCart';
 
+
+
+
+
+
 function App() {
   return (
     <Router>
@@ -55,6 +60,8 @@ function App() {
                 <Cards />
               </div>
               <BuyCart />
+       
+              
             </>
           }
         />
