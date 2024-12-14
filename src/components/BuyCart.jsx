@@ -2,11 +2,16 @@ import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 
-function BuyCart() {
-  let productPrice = 1000;
+
+
+
+
+let productPrice = 1000;
   let gstPrice = 180;
   let logisticsPrice = 300;
   let productTotal = 0;
+function BuyCart() {
+  
 
   function productTotalPrice(productPrice, gstPrice,logisticsPrice) {
      return productTotal = productPrice+gstPrice+logisticsPrice;

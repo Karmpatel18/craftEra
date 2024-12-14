@@ -54,7 +54,7 @@ function App() {
                 <Category />
               </div>
               <div className='flex flex-row'>
-                <Cards cardTitle="painting 1" productPrice="1299" />
+                <Cards cardTitle="Art piece 1" productPrice="1289" />
                 <Cards />
                 <Cards />
                 <Cards />
