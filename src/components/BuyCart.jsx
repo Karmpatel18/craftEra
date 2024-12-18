@@ -19,7 +19,7 @@ function BuyCart() {
   productTotalPrice();
 
   return (
-    <div className='font-poppins ml-36 flex flex-row w-3/4 bg-slate-200/50 h-[560px] rounded-2xl'>
+    <div className='font-poppins ml-36 flex flex-row w-3/4 bg-neutral-200/50 h-[560px] rounded-2xl'>
       {/* left section */}
       <div className='flex-1 flex-col'>
         <div className=' h-4/7 w-auto m-8 rounded-xl  '>
