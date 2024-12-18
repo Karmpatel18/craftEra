@@ -21,11 +21,11 @@ function BuyCart() {
   return (
     <div className='font-poppins ml-36 flex flex-row w-3/4 bg-neutral-200/50 h-[560px] rounded-2xl'>
       {/* left section */}
-      <div className='flex-1 flex-col'>
-        <div className=' h-4/7 w-auto m-8 rounded-xl  '>
-          <img className='h-[100%] w-[100%] object-cover rounded-xl' src='https://images.pexels.com/photos/1509534/pexels-photo-1509534.jpeg?auto=compress&cs=tinysrgb&w=800='/>
+      <div className='flex-1 flex-col flex justify-between'>
+        <div className=' h-[360px] w-auto m-8 rounded-xl  '>
+          <img className='h-[100%] w-[100%] object-cover rounded-xl' src='https://images.pexels.com/photos/4272616/pexels-photo-4272616.jpeg?auto=compress&cs=tinysrgb&w=800'/>
         </div>
-        <div className='flex w-auto h-auto m-8 justify-between opacity-75'>
+        <div className='flex w-auto h-auto m-8 mt-0 justify-between opacity-75'>
           <div className='cursor-pointer  rounded-lg h-24 w-36 place-content-stretch ring-2 ring-offset-2 ring-pink-400'>
             <img className='h-[100%] w-[100%] object-cover rounded-lg'src='https://images.pexels.com/photos/5788376/pexels-photo-5788376.jpeg?auto=compress&cs=tinysrgb&w=800'/>
           </div>
