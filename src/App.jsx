@@ -22,7 +22,7 @@ function App() {
           path="/"
           element={
             <>
-              <div className='ml-6 mr-6 font-poppins bg-sky-200/50 h-[694px] flex flex-col rounded-2xl'>
+              <div className='ml-6 mr-6 font-poppins bg-sky-200/50 h-[694px] flex flex-col rounded-lg'>
                 <div className='flex mt-64 flex-row justify-center items-center space-x-6'>
                   <div className='flex text-center font-bold text-6xl'>Unleash</div>
                   <div>

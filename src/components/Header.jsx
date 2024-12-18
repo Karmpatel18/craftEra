@@ -18,10 +18,10 @@ function Header() {
           <Link to="/about" className="">About</Link>
           <Link to="/contact" className="">Contact</Link>
           <Link to="/login">
-            <div className="px-4 py-2 text-white rounded-full bg-gray-900">Signin</div>
+            <div className="px-4 py-2 text-white rounded-lg bg-gray-900">Signin</div>
           </Link>
           <Link to="/signup">
-            <div className="px-4 py-2 text-white rounded-full bg-gray-900">Sign up</div>
+            <div className="px-4 py-2 text-white rounded-lg bg-gray-900">Sign up</div>
           </Link>
         </div>
       </div>
