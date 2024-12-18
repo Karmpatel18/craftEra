@@ -6,6 +6,8 @@ import Cards from './components/Cards';
 import LoginPage from './components/signup'; // Create this component
 import SignUpPage from './components/login'; // Create this component
 import BuyCart from './components/BuyCart';
+import Meteors from './components/ui/meteors';
+
 
 
 
@@ -22,7 +24,10 @@ function App() {
           path="/"
           element={
             <>
-              <div className='ml-6 mr-6 font-poppins bg-neutral-200/50 h-[694px] flex flex-col rounded-lg'>
+              <div className='ml-6 relative overflow-hidden mr-6 font-poppins bg-neutral-200/50 h-[694px] flex flex-col rounded-lg'>
+              <div className='mt-14 absolute'>
+                <Meteors number={20} />
+              </div>
                 <div className='flex mt-64 flex-row justify-center items-center space-x-6'>
                   <div className='flex text-center font-bold text-6xl'>Unleash</div>
                   <div>
@@ -67,10 +72,10 @@ function App() {
         />
 
         {/* Login Page */}
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={LoginPage} />
 
         {/* Sign Up Page */}
-        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/signup" element={ SignUpPage} />
       </Routes>
     </Router>
   );
