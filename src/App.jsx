@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
-import Category from './components/Category';
+import CategoryButton from './components/Category';
 import Cards from './components/Cards';
 import LoginPage from './components/signup'; // Create this component
 import SignUpPage from './components/login'; // Create this component
@@ -54,17 +54,27 @@ function App() {
               </div>
 
               {/* search section */}
-              <div className="flex ml-8 mt-10 space-x-4">
-                <SearchBar />
-                <Category />
+              <div className='px-8 pt-10 text-3xl font-semibold'>
+                Hey welcome back user1!!
               </div>
+              <div className="flex ml-8 mt-10 justify-normal">
+                <div className="flex space-x-10">
+                <SearchBar />
+                <CategoryButton />
+                <CategoryButton />
+                <CategoryButton />
+                </div>
+                
+                
+              </div>
+               
               <div className='flex flex-row'>
                 <Cards cardTitle="Art piece 1" productPrice="1289" />
                 <Cards />
                 <Cards />
                 <Cards />
               </div>
-              <BuyCart />
+              
        
               
             </>
