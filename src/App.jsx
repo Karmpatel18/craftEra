@@ -7,6 +7,8 @@ import LoginPage from './components/signup'; // Create this component
 import SignUpPage from './components/login'; // Create this component
 import BuyCart from './components/BuyCart';
 import Meteors from './components/ui/meteors';
+import './style.css';
+import Footer from './components/footer';
 
 
 
@@ -73,6 +75,9 @@ function App() {
                 <Cards />
                 <Cards />
                 <Cards />
+              </div>
+              <div>
+                <Footer/>
               </div>
               
        
