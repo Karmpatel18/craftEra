@@ -1,0 +1,189 @@
+.photo {
+    width: 100%;
+    height: 40vh;
+    border-radius: 10px;
+    text-align: center;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    /* Adds spacing between cards */
+    padding: 20px;
+}
+
+/* Card styling */
+.card {
+    background: #fff;
+    /* White background for a clean look */
+    width: 300px;
+    /* Fixed width for uniformity */
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card hover effect */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Headings */
+h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+p {
+    line-height: 1.6;
+    color: #555;
+    font-size: 16px;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .card {
+        width: 90%;
+        /* Cards take full width on smaller screens */
+    }
+}
+
+
+/* Style social media icons */
+.social-media {
+    display: flex;
+    justify-content: center;
+    /* Center the icons */
+    margin-top: 20px;
+}
+
+.social-media img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px 10px 0;
+    /*add a border*/
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Feature Section Styles */
+.feature-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.feature-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.feature-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.feature-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.feature-card-description {
+    font-size: 1em;
+    color: #777;
+    line-height: 1.5;
+}
+
+/* About Section Styles */
+.feature-about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.feature-about-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.feature-about-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.feature-about-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.feature-about-card-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.feature-about-card-description {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.5;
+}
