@@ -58,7 +58,7 @@ function AboutUs() {
             ))}
           </div>
         </div>     {/* Social media links (optional) */} <div className="title">
-          <h2>Our Social meida</h2>
+          <h2>Our Social media</h2>
         </div>
 
         <div className="social-media">
