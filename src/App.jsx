@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import SearchBar from './components/SearchBar';
-import CategoryButton from './components/Category';
+
 import Cards from './components/Cards';
 import Meteors from './components/ui/meteors';
 
