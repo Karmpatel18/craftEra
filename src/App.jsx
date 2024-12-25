@@ -4,11 +4,18 @@ import SearchBar from './components/SearchBar';
 import CategoryButton from './components/Category';
 import Cards from './components/Cards';
 import Meteors from './components/ui/meteors';
+
 import ContactForm from './components/contact';
 import Footer from './components/footer';
 import SignIn from './components/login';
 import SignUpPage from './components/signup';
 import AboutUs from './components/about';
+=======
+import './style.css';
+
+
+
+
 
 
 
@@ -65,6 +72,7 @@ function App() {
               </div>
 
 
+
             </div>
 
             <div className='flex flex-row'>
@@ -73,6 +81,9 @@ function App() {
               <Cards />
               <Cards />
             </div>
+              <div>
+                <Footer/>
+              </div>
 
 
 
