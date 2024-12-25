@@ -10,7 +10,6 @@ import Footer from './components/footer';
 import SignIn from './components/login';
 import SignUpPage from './components/signup';
 import AboutUs from './components/about';
-=======
 import './style.css';
 
 
@@ -58,22 +57,37 @@ function App() {
                 <img className="w-8 h-8 animate-bounce text-white opacity-20" src="/public/assets/down-arrow.svg" alt="down arrow" />
               </div>
             </div>
-
-            {/* search section */}
-            <div className='px-8 pt-10 text-3xl font-semibold'>
-              Hey welcome back user1!!
+{/* search bar and category section starts */}
+            
+            <div className="mt-8 border-y-[2px] border-neutral-200/50">
+            <div className='font-poppins px-8 pt-10 text-3xl font-medium'>
+             &#128075; Hey welcome back user1!!
             </div>
-            <div className="flex ml-8 mt-10 justify-normal">
-              <div className="flex space-x-10">
-                <SearchBar />
-                <CategoryButton />
-                <CategoryButton />
-                <CategoryButton />
+
+
+            
+
+            
+
+            <div className="font-poppins flex flex-row my-8 space-x-4">
+              <div className="max-w-lg ml-8 flex-1">
+                <div className='flex flex-row '>
+                  <input type='type'placeholder='Enter product name ' className=' font-normal text-md  border-2  w-42 md:w-full border-neutral-500 rounded-l-full px-4 py-[10px] '></input>
+                  <div className="flex ">
+                  <button className='px-4 bg-neutral-500 text-white border-2 border-neutral-500 rounded-r-full -translate-x-[2px]'>search</button>
+                  </div>
+                </div>
               </div>
-
-
+              <div className='flex font-medium space-x-4'>
+                <button className="bg-neutral-200/50 text-slate-800 rounded-full px-10 max-w-lg hover:ring-neutral-500 ring-inset ring-neutral-200/50 ring-2 duration-500">Art</button>
+                <button className="bg-neutral-200/50 text-slate-800 rounded-full px-10 max-w-lg hover:ring-neutral-500 ring-inset ring-neutral-200/50 ring-2 duration-500">Handicraft</button>
+                <button className="bg-neutral-200/50 text-slate-800 rounded-full px-10 max-w-lg hover:ring-neutral-500 ring-inset ring-neutral-200/50 ring-2 duration-500">Painting</button>
+                <button className="bg-neutral-500 text-white rounded-full px-10 max-w-lg hover:ring-neutral-500 ring-inset ring-neutral-200/50 ring-2 duration-500">All</button>
+              </div>
+            </div>
 
             </div>
+            {/* ends here */}
 
             <div className='flex flex-row'>
               <Cards cardTitle="Art piece 1" productPrice="1289" />
@@ -81,11 +95,9 @@ function App() {
               <Cards />
               <Cards />
             </div>
-              <div>
-                <Footer/>
-              </div>
+              
 
-
+            <Footer />
 
           </>
           } />
@@ -100,7 +112,7 @@ function App() {
       </Routes>
     </Router>
       {/* // App component add from here  */}
-      <Footer />
+      
 
 
     </>
