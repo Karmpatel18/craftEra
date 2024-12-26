@@ -28,7 +28,7 @@ function App() {
         <Route
           path="/"
           element={<>
-            <div className='ml-6 relative overflow-hidden mr-6 font-poppins bg-neutral-200/50 h-[694px] flex flex-col rounded-lg'>
+            <div className='ml-6 relative overflow-hidden mr-6 font-poppins bg-neutral-200/50 h-[694px] flex flex-col rounded-lg '>
               <div className='mt-14 absolute'>
                 <Meteors number={20} />
               </div>

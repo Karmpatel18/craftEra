@@ -1,3 +1,20 @@
+/* Remove default scrollbar in WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Remove default scrollbar in Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* Ensure overflow functionality remains intact */
+html, body {
+  overflow: auto;
+}
+
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
