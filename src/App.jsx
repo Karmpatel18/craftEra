@@ -5,7 +5,7 @@ import Cards from './components/Cards';
 import Meteors from './components/ui/meteors';
 
 import ContactForm from './components/contact';
-import Footer from './components/footer';
+import MainFooter from './components/MainFooter';
 import SignIn from './components/login';
 import SignUpPage from './components/signup';
 import AboutUs from './components/about';
@@ -94,7 +94,7 @@ function App() {
             </div>
               
 
-            <Footer />
+           <MainFooter/>
 
           </>
           } />
