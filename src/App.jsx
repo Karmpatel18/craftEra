@@ -71,7 +71,7 @@ function App() {
             <div className="font-poppins flex flex-row my-8 space-x-4">
               <div className="max-w-lg ml-8 flex-1">
                 <div className='flex flex-row '>
-                  <input type='type'placeholder='Enter product name ' className=' font-normal text-md  border-2  w-42 md:w-full border-neutral-500 rounded-l-full px-4 py-[10px] '></input>
+                  <input type='type' placeholder='Enter product name ' className=' font-normal text-md placeholder:text-neutral-500 focus:outline-none  w-42 md:w-full bg-neutral-200/50 rounded-l-full px-4 py-[10px] '></input>
                   <div className="flex ">
                   <button className='px-4 bg-neutral-500 text-white border-2 border-neutral-500 rounded-r-full -translate-x-[2px]'>search</button>
                   </div>
