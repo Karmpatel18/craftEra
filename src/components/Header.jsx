@@ -6,7 +6,7 @@ function Header() {
       <div className="pl-10 pr-10 mt-8 mb-8 flex justify-between items-center font-poppins">
         <div className="flex flex-row items-center">
           <div>
-            <img className='h-10 w-10 items-center' src='/public/assets/pink.png' alt="Logo" />
+            <img className='h-10 w-10 items-center' src='/assets/pink.png' alt="Logo" />
           </div>
           <div className="font-bold text-3xl">
             <h2>craftEra</h2>

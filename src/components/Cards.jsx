@@ -1,10 +1,12 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React from 'react'
 
 function Cards(props) {
   
   return (
-    <div className='font-poppins p-8'>
-      <div className='bg-neutral-100 h-72 w-64 rounded-sm hover:bg-neutral-300/50   duration-500'>
+    <div className='font-poppins bg-neutral-100 hover:bg-neutral-300/50 rounded-sm    duration-500 hover:scale-[101%] hover:shadow-lg'>
+      <div className=' h-72 w-64 '>
         <div className='p-2 h-[100%] w-[100%] object-cover '>
           <img className='rounded-[2px] h-[100%] w-[100%] object-cover 'src="https://images.pexels.com/photos/4272616/pexels-photo-4272616.jpeg?auto=compress&cs=tinysrgb&w=800"/>
         </div>

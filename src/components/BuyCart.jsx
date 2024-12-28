@@ -6,17 +6,10 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 
 
-let productPrice = 1000;
-  let gstPrice = 180;
-  let logisticsPrice = 300;
-  let productTotal = 0;
-function BuyCart() {
+const BuyCart = () => {
   
 
-  function productTotalPrice(productPrice, gstPrice,logisticsPrice) {
-     return productTotal = productPrice+gstPrice+logisticsPrice;
-  }
-  productTotalPrice();
+  
 
   return (
     <div className='font-poppins ml-36 flex flex-row w-3/4 bg-neutral-200/50 h-[560px] rounded-2xl'>

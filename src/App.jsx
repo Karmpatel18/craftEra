@@ -35,7 +35,7 @@ function App() {
               <div className='flex mt-64 flex-row justify-center items-center space-x-6'>
                 <div className='flex text-center font-bold text-6xl'>Unleash</div>
                 <div>
-                  <img className='h-20 w-20 animate-spin-slow' src='/public/assets/blue.png' alt="spinning graphic" />
+                  <img className='h-20 w-20 animate-spin-slow' src='/assets/blue.png' alt="spinning graphic" />
                 </div>
                 <div className='flex text-center font-bold text-6xl'>Creativity</div>
               </div>
@@ -53,7 +53,7 @@ function App() {
                 </button>
               </div>
               <div className='flex justify-center mt-10'>
-                <img className="w-8 h-8 animate-bounce text-white opacity-20" src="/public/assets/down-arrow.svg" alt="down arrow" />
+                <img className="w-8 h-8 animate-bounce text-white opacity-20" src="/assets/down-arrow.svg" alt="down arrow" />
               </div>
             </div>
 {/* search bar and category section starts */}
@@ -88,7 +88,9 @@ function App() {
             </div>
             {/* ends here */}
 
-            <div className='flex flex-row'>
+            <div className='flex flex-row mx-8 my-8 gap-4'>
+              <Cards cardTitle="Art piece 1" productPrice="1289" />
+              <Cards cardTitle="Art piece 1" productPrice="1289" />
               <Cards cardTitle="Art piece 1" productPrice="1289" />
               
             </div>
