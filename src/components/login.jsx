@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 function SignInPage() {
   return (
     <>
-    <div className="flex bg-antiquewhite overflow-hidden p-5 rounded-lg w-[1000px] mx-auto my-auto justify-center items-center">
-      <div className="flex-1 rounded-lg bg-center bg-cover" style={{ backgroundImage: "url('/assets/krishna.jpg')" }}>
-        <img src="/assets/krishna.jpg" alt="Image of Krishna" className="h-[600px] object-cover rounded-lg" />
+    <div className="flex bg-neutral-200/50 overflow-hidden p-5 rounded-lg w-[1000px] mx-auto my-auto justify-center items-center">
+      <div className="flex-1 rounded-lg bg-center bg-cover" style={{ backgroundImage: "url('/assets/login.jpg')" }}>
+        <img src=""  className="h-[600px] object-cover rounded-lg" />
       </div>
 
       <div className="flex-1 flex flex-col justify-center items-center">
@@ -33,13 +33,13 @@ function SignInPage() {
 
           <button 
             type="submit" 
-            className="p-3 text-base text-white bg-blue-500 rounded-md hover:bg-blue-600"
+            className="p-3 text-base text-white bg-neutral-500 rounded-md hover:bg-neutral-600 duration-300"
           >
             Sign In
           </button>
         </form>
         <p className="mt-5 text-base">
-          Don't have an account? <Link to="/signup" className="text-blue-500 hover:underline">Sign up</Link>
+          Don't have an account? <Link to="/signup" className="text-pink-400 hover:underline">Sign up</Link>
         </p>
       </div>
     </div>
