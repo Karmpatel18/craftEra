@@ -62,11 +62,11 @@ function AboutUs() {
         </div>
 
         <div className="social-media">
-          <a href="" traget="_blank" rel="noopener noreferrer">
-            <img src='/public/assets/insta.png' alt="Instagram" />
+          <a href="" target="_blank" rel="noopener noreferrer">
+            <img src='/assets/insta.png' alt="Instagram" />
           </a>
-          <a href="" traget="_blank" rel="noopener noreferrer">
-            <img src='/public/assets/whatsapp.png' alt="WhatsApp" />
+          <a href="" target="_blank" rel="noopener noreferrer">
+            <img src='/assets/whatsapp.png' alt="WhatsApp" />
           </a>
         </div>
 
