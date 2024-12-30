@@ -22,13 +22,15 @@ import './style.css';
 function App() {
   return (
     <><Router>
+      <div className='fixed top-0 flex left-0 w-full  backdrop-blur-lg  z-50'>
       <Header />
+      </div>
       <Routes>
         {/* Home Page */}
         <Route
           path="/"
           element={<>
-            <div className='ml-6 relative overflow-hidden mr-6 font-poppins bg-neutral-200/50 h-[694px] flex flex-col rounded-lg '>
+            <div className='ml-6 mt-28 relative overflow-hidden mr-6 font-poppins bg-neutral-200/50 h-[694px] flex flex-col rounded-lg '>
               <div className='mt-14 absolute'>
                 <Meteors number={20} />
               </div>

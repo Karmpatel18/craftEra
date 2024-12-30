@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function SignInPage() {
   return (
     <>
-    <div className="flex bg-neutral-200/50 overflow-hidden p-5 rounded-lg w-[1000px] mx-auto my-auto justify-center items-center">
+    <div className="flex mt-28 bg-neutral-200/50 overflow-hidden p-5 rounded-lg w-[1000px] mx-auto my-auto justify-center items-center">
       <div className="flex-1 rounded-lg bg-center bg-cover" style={{ backgroundImage: "url('/assets/login.jpg')" }}>
         <img src=""  className="h-[600px] object-cover rounded-lg" />
       </div>

@@ -16,7 +16,7 @@ function AboutUs() {
 
   return (
     <>
-      <div>
+      <div className='mt-28'>
         {/* About Us Section header */}
         <div className="photo">
           <h1>Group Photo 📸</h1>
