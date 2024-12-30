@@ -30,10 +30,8 @@ function App() {
         <Route
           path="/"
           element={<>
-            <div className='ml-6 mt-28 relative overflow-hidden mr-6 font-poppins bg-neutral-200/50 h-[694px] flex flex-col rounded-lg '>
-              <div className='mt-14 absolute'>
-                <Meteors number={20} />
-              </div>
+            <div className='ml-6 mt-28  mr-6 font-poppins bg-neutral-200/50 h-[694px] flex flex-col rounded-lg '>
+              
               <div className='flex mt-64 flex-row justify-center items-center space-x-6'>
                 <div className='flex text-center font-bold text-6xl'>Unleash</div>
                 <div>

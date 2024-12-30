@@ -26,20 +26,20 @@ function Header() {
           <NavLink to="/" 
           className={({ isActive }) =>
             isActive
-              ? "text-neutral-50  bg-gray-900 px-4 py-2 duration-200 rounded-lg"
-              : "text-gray-900 hover:text-gray-700 bg-white px-4 py-2 duration-200 rounded-lg"
+              ? "text-neutral-50  bg-gray-900 px-4 py-2 duration-200 rounded-lg "
+              : "text-gray-900 hover:text-gray-700 bg-white px-4 py-2 duration-200 rounded-lg "
           }
           >Home</NavLink>
           
           <NavLink to="/about" className={({ isActive }) =>
               isActive
-                ? "text-neutral-50  bg-gray-900 px-4 py-2 duration-200 rounded-lg"
-                : "text-gray-900 hover:text-gray-700 bg-white px-4 py-2 duration-200 rounded-lg"
+                ? "text-neutral-50  bg-gray-900 px-4 py-2 duration-200 rounded-lg "
+                : "text-gray-900 hover:text-gray-700 bg-white px-4 py-2 duration-200 rounded-lg "
             }>About</NavLink>
           <NavLink to="/contact" className={({ isActive }) =>
               isActive
-                ? "text-neutral-50  bg-gray-900 px-4 py-2 duration-200 rounded-lg"
-                : "text-gray-900 hover:text-gray-700 bg-white px-4 py-2 duration-200 rounded-lg"
+                ? "text-neutral-50  bg-gray-900 px-4 py-2 duration-200 rounded-lg "
+                : "text-gray-900 hover:text-gray-700 bg-white px-4 py-2 duration-200 rounded-lg "
             }>Contact</NavLink>
           
           
