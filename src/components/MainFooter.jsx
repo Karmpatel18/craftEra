@@ -25,7 +25,7 @@ const MainFooter = () => {
 
 
     return (
-        <div className='font-poppins font-light tracking-wide bg-neutral-700 text-white'>
+        <div className='font-poppins font-light tracking-wide bg-neutral-800 text-white'>
         <div className="flex flex-row justify-between px-8 py-5 items-center ">
             <div className="pointer-events-none">&#169; 2024 CraftEra</div>
 

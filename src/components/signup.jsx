@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function SignUpPage() {
   return (
     <>
-      <div className="flex mt-28 bg-neutral-200/50 overflow-hidden p-5 rounded-lg w-[1000px] mx-auto my-auto justify-center items-center">
+      <div className="flex mt-28 bg-neutral-200/50 overflow-hidden p-5 rounded-xl w-[1000px] mx-auto my-auto justify-center items-center">
         <div className="flex-1 flex flex-col justify-center items-center">
           <h1 className="text-2xl mb-5">Create an Account</h1>
           <form className="flex flex-col w-4/5">
@@ -29,7 +29,7 @@ function SignUpPage() {
 
             <button 
               type="submit" 
-              className="p-3 text-base text-white bg-neutral-500 rounded-md hover:bg-neutral-600 duration-300"
+              className="p-3 text-base text-white bg-neutral-700 rounded-md hover:bg-neutral-800 duration-300"
             >
               Sign Up
             </button>

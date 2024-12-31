@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 
 import Cards from './components/Cards';
-import Meteors from './components/ui/meteors';
 
 import ContactForm from './components/contact';
 import MainFooter from './components/MainFooter';
@@ -32,7 +31,7 @@ function App() {
           element={<>
             <div className='ml-6 mt-28  mr-6 font-poppins bg-neutral-200/50 h-[694px] flex flex-col rounded-lg '>
               
-              <div className='flex mt-64 flex-row justify-center items-center space-x-6'>
+              <div className='flex mt-64 flex-row justify-center items-center space-x-6 text-neutral-800'>
                 <div className='flex text-center font-bold text-6xl'>Unleash</div>
                 <div>
                   <img className='h-20 w-20 animate-spin-slow' src='/assets/blue.png' alt="spinning graphic" />
@@ -48,7 +47,7 @@ function App() {
 
               {/* home page button */}
               <div className='flex justify-center'>
-                <button className='px-8 py-4 mt-32 rounded-full bg-gray-900 ring-2 ring-pink-400 text-white font-medium'>
+                <button className='px-8 py-4 mt-32 rounded-full bg-neutral-800 ring-2 ring-pink-400 text-white font-medium'>
                   Explore products
                 </button>
               </div>
@@ -73,7 +72,7 @@ function App() {
                 <div className='flex flex-row '>
                   <input type='type' placeholder='Enter product name ' className=' font-normal text-md placeholder:text-neutral-500 focus:outline-none  w-42 md:w-full bg-neutral-200/50 rounded-l-full px-4 py-[10px] '></input>
                   <div className="flex ">
-                  <button className='px-4 bg-neutral-500 text-white border-2 border-neutral-500 rounded-r-full -translate-x-[2px]'>search</button>
+                  <button className='px-4 bg-neutral-800 text-white border-2 border-neutral-400 rounded-r-full -translate-x-[2px]'>search</button>
                   </div>
                 </div>
               </div>
@@ -81,7 +80,7 @@ function App() {
                 <button className="bg-neutral-200/50 text-slate-800 rounded-full px-10 max-w-lg hover:ring-neutral-500 ring-inset ring-neutral-200/50 ring-2 duration-500">Art</button>
                 <button className="bg-neutral-200/50 text-slate-800 rounded-full px-10 max-w-lg hover:ring-neutral-500 ring-inset ring-neutral-200/50 ring-2 duration-500">Handicraft</button>
                 <button className="bg-neutral-200/50 text-slate-800 rounded-full px-10 max-w-lg hover:ring-neutral-500 ring-inset ring-neutral-200/50 ring-2 duration-500">Painting</button>
-                <button className="bg-neutral-500 text-white rounded-full px-10 max-w-lg hover:ring-neutral-500 ring-inset ring-neutral-200/50 ring-2 duration-500">All</button>
+                <button className="bg-neutral-800 text-white rounded-full px-10 max-w-lg hover:ring-neutral-500 ring-inset ring-neutral-200/50 ring-2 duration-500">All</button>
               </div>
             </div>
 
