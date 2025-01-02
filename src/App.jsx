@@ -87,11 +87,24 @@ function App() {
             </div>
             {/* ends here */}
 
-            <div className='flex flex-row mx-8 my-8 gap-4'>
+            <div className="w-fit h-[800px] overflow-y-auto border-2 rounded-lg border-neutral-200/50 m-8 overflow-scroll scroll-m-1">
+            <div className='flex flex-wrap mx-8 my-8 justify-evenly '>
+              <Cards cardTitle="Art piece 1" productPrice="1289" />
+              <Cards cardTitle="Art piece 1" productPrice="1289" />
+              <Cards cardTitle="Art piece 1" productPrice="1289" />
+              <Cards cardTitle="Art piece 1" productPrice="1289" />
+              <Cards cardTitle="Art piece 1" productPrice="1289" />
+              <Cards cardTitle="Art piece 1" productPrice="1289" />
+              <Cards cardTitle="Art piece 1" productPrice="1289" />
+              <Cards cardTitle="Art piece 1" productPrice="1289" />
+              <Cards cardTitle="Art piece 1" productPrice="1289" />
+              <Cards cardTitle="Art piece 1" productPrice="1289" />
+              <Cards cardTitle="Art piece 1" productPrice="1289" />
               <Cards cardTitle="Art piece 1" productPrice="1289" />
               <Cards cardTitle="Art piece 1" productPrice="1289" />
               <Cards cardTitle="Art piece 1" productPrice="1289" />
               
+            </div>
             </div>
               
 
