@@ -26,26 +26,26 @@ function Header() {
           className={({ isActive }) =>
             isActive
               ? "text-neutral-50  bg-neutral-800 px-4 py-2 duration-300 rounded-lg "
-              : "text-gray-900 hover:bg-neutral-200 bg-white px-4 py-2 duration-300 rounded-lg "
+              : "text-gray-900 hover:bg-neutral-200 bg-opacity-0 px-4 py-2 duration-300 rounded-lg "
           }
           >Home</NavLink>
           
           <NavLink to="/about" className={({ isActive }) =>
               isActive
                 ? "text-neutral-50  bg-neutral-800 px-4 py-2 duration-300 rounded-lg "
-                : "text-gray-900 hover:bg-neutral-200 bg-white px-4 py-2 duration-300 rounded-lg "
+                : "text-gray-900 hover:bg-neutral-200 bg-opacity-0 px-4 py-2 duration-300 rounded-lg "
             }>About</NavLink>
           <NavLink to="/contact" className={({ isActive }) =>
               isActive
                 ? "text-neutral-50  bg-neutral-800 px-4 py-2 duration-300 rounded-lg "
-                : "text-gray-900 hover:bg-neutral-200 bg-white px-4 py-2 duration-300 rounded-lg "
+                : "text-gray-900 hover:bg-neutral-200 bg-opacity-0 px-4 py-2 duration-300 rounded-lg "
             }>Contact</NavLink>
           
           
           {/* <div onClick={onClick} className="h-8 w-8 text-white rounded-full bg-gray-900"></div> */}
           {isLoggedIn ? (<div className="flex " onClick={onClick}> 
               <Link to="/login">
-                { isLoggedIn &&<div className='flex ring-[2px] ring-inset ring-neutral-700 rounded-lg bg-[conic-gradient(at_top_right,_var(--tw-gradient-stops))] from-lime-900 via-blue-200 to-stone-300 gap-2 px-4 py-2 items-center text-center'><div className=" text-gray-800   text-ellipsis font-normal">Get started</div><div className="flex items-center h-6 w-6"><CircumIcon name="login"/></div></div>}
+                { isLoggedIn &&<div className='flex ring-[2px] ring-inset ring-neutral-700 rounded-lg  gap-2 px-4 py-2 items-center text-center'><div className=" text-gray-800   text-ellipsis font-normal">Get started</div><div className="flex items-center h-6 w-6"><CircumIcon name="login"/></div></div>}
               </Link>
               {/* <Link to="/signup">
                 { isLoggedIn && <div className="px-4 py-2 text-white rounded-lg bg-gray-900">Sign up</div>}
