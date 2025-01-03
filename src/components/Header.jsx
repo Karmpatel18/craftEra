@@ -13,13 +13,11 @@ function Header() {
 
   return (
     <>
-      <div className="w-full pl-10 pr-10 mt-8 mb-8 flex justify-between items-center font-poppins">
+      <div className="w-full pl-10 pr-10 my-8 flex justify-between items-center font-poppins">
         <div className="flex flex-row items-center">
-          <div>
-            <img className='h-10 w-10 items-center' src='/assets/pink.png' alt="Logo" />
-          </div>
-          <div className="font-bold text-3xl text-neutral-800">
-            <h2>craftEra</h2>
+          
+          <div className="font-bold text-3xl text-neutral-800 ">
+            <img className="h-10" src='/assets/header_logo.png' alt='Craftera' loading='lazy' />
           </div>
         </div>
 

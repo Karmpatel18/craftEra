@@ -9,7 +9,7 @@ function Cards(props) {
   
 
   return (
-    <div className='font-poppins bg-neutral-100 hover:bg-neutral-300/50 rounded-sm    duration-500 hover:scale-[101%] hover:shadow-lg'
+    <div className='font-poppins bg-neutral-100 hover:bg-neutral-300/50 rounded-sm  mt-6  duration-500 hover:scale-[101%] hover:shadow-lg'
       
       >
       <div className=' h-72 w-64 '>
