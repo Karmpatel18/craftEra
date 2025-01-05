@@ -1,6 +1,6 @@
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-
+import {useState} from 'react'
 
 
 
@@ -8,7 +8,13 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 const BuyCart = () => {
   
+  const images = [
+    "https://images.pexels.com/photos/5788376/pexels-photo-5788376.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "https://images.pexels.com/photos/3817675/pexels-photo-3817675.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "https://images.pexels.com/photos/20184610/pexels-photo-20184610/free-photo-of-flowers-in-vase.jpeg?auto=compress&cs=tinysrgb&w=800",
+  ];
 
+  const [heroImage, setHeroImage] = useState(images[0]);
   
 
   return (
@@ -16,18 +22,20 @@ const BuyCart = () => {
       {/* left section */}
       <div className='flex-1 flex-col flex justify-between'>
         <div className=' h-[360px] w-auto m-8 rounded-xl  '>
-          <img className='h-[100%] w-[100%] object-cover rounded-xl' src='https://images.pexels.com/photos/4272616/pexels-photo-4272616.jpeg?auto=compress&cs=tinysrgb&w=800'/>
+          <img className='h-[100%] w-[100%] object-cover rounded-xl' src={heroImage} 
+          loading="lazy"
+          alt="Hero" />
         </div>
         <div className='flex w-auto h-auto m-8 mt-0 justify-between opacity-75'>
-          <div className='cursor-pointer  rounded-lg h-24 w-36 place-content-stretch ring-2 ring-offset-2 ring-pink-400'>
-            <img className='h-[100%] w-[100%] object-cover rounded-lg'src='https://images.pexels.com/photos/5788376/pexels-photo-5788376.jpeg?auto=compress&cs=tinysrgb&w=800'/>
-          </div>
-          <div className='cursor-pointer  rounded-lg h-24 w-36'>
-            <img className='h-[100%] w-[100%] object-cover rounded-lg'src='https://images.pexels.com/photos/5788376/pexels-photo-5788376.jpeg?auto=compress&cs=tinysrgb&w=800'/>
-          </div>
-          <div className='cursor-pointer  rounded-lg h-24 w-36'>
-            <img className='h-[100%] w-[100%] object-cover rounded-lg'src='https://images.pexels.com/photos/5788376/pexels-photo-5788376.jpeg?auto=compress&cs=tinysrgb&w=800'/>  
-          </div>
+        {images.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Thumbnail ${index + 1}`}
+            className={`w-24 h-16 object-cover cursor-pointer rounded-md border-2 transition-transform transform hover:scale-110 ${image === heroImage ? "border-blue-500" : "border-transparent"}`}
+            onClick={() => setHeroImage(image)}
+          />
+        ))}
         </div>
       </div>
       {/* right section */}
@@ -44,7 +52,7 @@ const BuyCart = () => {
             Price :
           </div>
           <div className="font-normal text-lg">
-            {productPrice}
+            hi
           </div>
           
         </div>
@@ -53,7 +61,7 @@ const BuyCart = () => {
             Price :
           </div>
           <div className="font-normal text-lg">
-            {productPrice}
+            there
           </div>
           
         </div>
@@ -62,7 +70,7 @@ const BuyCart = () => {
             Price :
           </div>
           <div className="font-normal text-lg">
-            {productPrice}
+            hello
           </div>
           
         </div>
@@ -74,7 +82,7 @@ const BuyCart = () => {
             Total cost :
           </div>
           <div className="font-normal text-xl" >
-            {productTotal}
+            cost
           </div>
           
         </div>

@@ -9,6 +9,7 @@ import SignIn from './components/login';
 import SignUpPage from './components/signup';
 import AboutUs from './components/about';
 import './style.css';
+import BuyCart from './components/BuyCart';
 
 
 
@@ -107,7 +108,7 @@ function App() {
             </div>
             </div>
               
-
+            <BuyCart/>
            <MainFooter/>
 
           </>
