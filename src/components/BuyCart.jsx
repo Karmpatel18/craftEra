@@ -1,6 +1,7 @@
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import {useState} from 'react'
+import { Link } from "react-router-dom";
 
 
 
@@ -18,7 +19,7 @@ const BuyCart = () => {
   
 
   return (
-    <div className='font-poppins ml-36 flex flex-row w-3/4 bg-neutral-200/50 h-[560px] rounded-2xl'>
+    <div className='mt-28 font-poppins flex flex-row w-[100%] bg-neutral-900/50 h-[100%] rounded-2xl'>
       {/* left section */}
       <div className='flex-1 flex-col flex justify-between'>
         <div className=' h-[360px] w-auto m-8 rounded-xl  '>
@@ -39,7 +40,7 @@ const BuyCart = () => {
         </div>
       </div>
       {/* right section */}
-      <div className='flex-1 '>
+      <div className='flex-1 p-2'>
         <div className='flex flex-col font-semibold text-4xl m-8 '>
           Painting title
         </div>

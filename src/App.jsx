@@ -108,12 +108,12 @@ function App() {
             </div>
             </div>
               
-            <BuyCart/>
+            
            <MainFooter/>
 
           </>
           } />
-
+        <Route path="/BuyCart" element={<BuyCart />} />
         {/* Login Page */}
         <Route path="/login" element={<SignIn />} />
         <Route path='/about' element={<AboutUs />} />
