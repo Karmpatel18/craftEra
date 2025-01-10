@@ -1,4 +1,3 @@
-import React from 'react';
 import './about.css'
 function AboutUs() {
   const features = [
@@ -18,9 +17,7 @@ function AboutUs() {
     <>
       <div className='mt-28'>
         {/* About Us Section header */}
-        <div className="photo">
-          <h1>Group Photo 📸</h1>
-        </div>
+        
 
         <div className="about-container">
 

@@ -10,6 +10,7 @@ import SignUpPage from './components/signup';
 import AboutUs from './components/about';
 import './style.css';
 import BuyCart from './components/BuyCart';
+import HeroScroll from './components/HeroScroll';
 
 
 
@@ -30,9 +31,10 @@ function App() {
         <Route
           path="/"
           element={<>
-            <div className='ml-6 mt-28  mr-6 font-poppins bg-neutral-200/50 h-[694px] flex flex-col rounded-lg '>
-              
-              <div className='flex mt-64 flex-row justify-center items-center space-x-6 text-neutral-800'>
+            <div className='ml-6 mt-28  mr-6 font-poppins bg-neutral-200/50 h-[694px] flex flex-col rounded-lg justify-evenly'>
+              <HeroScroll/>
+              <div className="pt-6">
+              <div className='flex  flex-row justify-center items-center space-x-6 text-neutral-800'>
                 <div className='flex text-center font-bold text-6xl'>Unleash</div>
                 <div>
                   <img className='h-20 w-20 animate-spin-slow' src='/assets/blue.png' alt="spinning graphic" />
@@ -48,12 +50,13 @@ function App() {
 
               {/* home page button */}
               <div className='flex justify-center'>
-                <button className='px-8 py-4 mt-32 rounded-full bg-neutral-800 ring-2 ring-pink-400 text-white font-medium'>
+                <button className='px-8 py-4 mt-10 rounded-full bg-neutral-800 ring-2 ring-pink-400 text-white font-medium'>
                   Explore products
                 </button>
               </div>
               <div className='flex justify-center mt-10'>
                 <img className="w-8 h-8 animate-bounce text-white opacity-20" src="/assets/down-arrow.svg" alt="down arrow" />
+              </div>
               </div>
             </div>
 {/* search bar and category section starts */}

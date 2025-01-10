@@ -81,3 +81,23 @@ html, body {
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+  min-width: max-content;
+  animation-play-state: running;
+  transition: animation-play-state 0.5s ease;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
