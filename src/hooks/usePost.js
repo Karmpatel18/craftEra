@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useEffect , useState } from "react";
 
 export default function useFetch(url){
@@ -12,7 +11,7 @@ export default function useFetch(url){
     
     useEffect(() => {
         fetchPost();
-    },[]);
+    },[url])
     
     return {
         finalData

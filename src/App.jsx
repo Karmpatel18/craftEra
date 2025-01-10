@@ -21,6 +21,12 @@ import HeroScroll from './components/HeroScroll';
 
 
 function App() {
+  function smoothScroll(){
+    const target = document.getElementById("target-section");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  }
   return (
     <><Router>
       <div className='fixed top-0 flex left-0 w-full  backdrop-blur-lg  z-50'>
@@ -50,7 +56,9 @@ function App() {
 
               {/* home page button */}
               <div className='flex justify-center'>
-                <button className='px-8 py-4 mt-10 rounded-full bg-neutral-800 ring-2 ring-pink-400 text-white font-medium'>
+                <button 
+                onClick={smoothScroll}
+                className='px-8 py-4 mt-10 rounded-full bg-neutral-800 ring-2 ring-pink-400 text-white font-medium'>
                   Explore products
                 </button>
               </div>
@@ -60,7 +68,7 @@ function App() {
               </div>
             </div>
 {/* search bar and category section starts */}
-            
+            <div id="target-section">
             <div className="mt-8 border-y-[2px] border-neutral-200/50">
             <div className='font-poppins px-8 pt-10 text-3xl font-medium'>
              &#128075; Hey welcome back user1!!
@@ -90,7 +98,7 @@ function App() {
 
             </div>
             {/* ends here */}
-
+            </div>  
             <div className="w-fit h-[800px] overflow-scroll border-2 rounded-lg border-neutral-200/50 m-8 shadow-lg scroll-m-1">
             <div className='flex flex-wrap mx-2 my-2 justify-evenly '>
               <Cards cardTitle="Art piece 1" productPrice="1289" />
