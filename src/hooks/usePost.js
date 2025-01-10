@@ -1,18 +1,21 @@
 /* eslint-disable no-unused-vars */
 import { useEffect , useState } from "react";
 
-export default function usePost(){
-    const[posts , setPosts] = useState({});
+export default function useFetch(url){
+    const[finalData , setFinalData] = useState({});
     
     async function fetchPost(){
-        const response = await fetch("api/v1/posts");
+        const response = await fetch(url);
         const json = await response.json();
+        setFinalData(json);
     }
     
     useEffect(() => {
         fetchPost();
-    },[])
+    },[]);
     
-    return posts;
+    return {
+        finalData
+    }
 
 }
