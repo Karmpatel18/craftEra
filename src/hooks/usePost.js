@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+import { useEffect , useState } from "react";
 
 export default function usePost(){
+    const[posts , setPosts] = useState({});
     
     async function fetchPost(){
         const response = await fetch("api/v1/posts");
@@ -10,4 +11,7 @@ export default function usePost(){
     useEffect(() => {
         fetchPost();
     },[])
+    
+    return posts;
+
 }
