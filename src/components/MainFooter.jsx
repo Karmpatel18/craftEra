@@ -26,16 +26,16 @@ const MainFooter = () => {
 
     return (
         <div className='font-poppins  flex flex-col border-t-[1px] border-neutral-200 bg-neutral-50 text-neutral-800'>
-            <div className="flex flex-row justify-between px-24 py-6 items-center ">
+            <div className="flex flex-row justify-between px-24 py-6  ">
                 
 
                 {/* get in touch section */}
-                <div className="flex-col">
+                <div className="flex flex-col">
                 <div className="text-2xl font-semibold">Contact Us</div>
-                <div className="text-sm font-normal mt-2 text-neutral-500">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</div>
-                <div className=" hover:cursor-pointer inline-flex  flex-row items-center gap-2 relative group text-sm"
+                <div className="text-sm font-normal mt-2 text-neutral-500">Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.</div>
+                <div className=" hover:cursor-pointer flex  flex-row items-center gap-2 relative group text-sm"
                     onClick={sendEmail}>drop your message here <BiSolidMessageSquareDetail /> <span
-                        className=" rounded-full absolute left-0 inset-5  w-0 h-[1.5px] bg-neutral-800 transition-all duration-300 group-hover:w-full"
+                        className="flex rounded-full absolute left-0 inset-5  w-0 h-[1.5px] bg-neutral-800 transition-all duration-300 group-hover:w-[192px]"
                     ></span></div>
                     </div>
 
