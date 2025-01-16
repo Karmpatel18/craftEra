@@ -1,9 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-
 import Cards from './components/Cards';
-
-import ContactForm from './components/contact';
 import MainFooter from './components/MainFooter';
 import SignIn from './components/login';
 import SignUpPage from './components/signup';
@@ -165,9 +162,9 @@ function App() {
                 </div>
               </div>
               
-            
-           <MainFooter/>
-            
+           
+          <MainFooter/>
+           
           </>
           } />
         <Route path="/BuyCart" element={<BuyCart />} />
@@ -177,7 +174,7 @@ function App() {
         {/* Sign Up Page */}
         <Route path="/signup" element={<SignUpPage />} />
 
-        <Route path='/contact' element={<ContactForm />} />
+        
       </Routes>
     </Router>
       {/* // App component add from here  */}
