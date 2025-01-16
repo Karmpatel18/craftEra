@@ -1,3 +1,6 @@
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+
 /** @type {import('tailwindcss').Config} */
 export default {
     darkMode: ["class"],
@@ -101,7 +104,7 @@ export default {
 		
 	]
   },
-    // eslint-disable-next-line no-undef
+    
     plugins: [require("tailwindcss-animate"),
 		
 	]

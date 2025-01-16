@@ -136,7 +136,7 @@ function App() {
                   <div className='px-6 py-4 gap-2 flex-col max-w-sm min-h-[340px] bg-white  text-neutral-800 text-sm  justify-between items-center border-[1px] border-neutral-200 rounded-md hover:shadow-lg duration-300'>
                     <img  className='w-20 h-20' src="/assets/idea.png"/>
                     <div className="flex flex-col gap-1">
-                      <div className='text-xl mt-2 font-semibold'>Turn your passion into reality!</div>
+                      <div className='text-xl mt-2 font-semibold'>Turn your passion into reality</div>
                       <div className='text-sm mt-2   text-neutral-500'>Got a unique idea? Craftera empowers artists to bring their creative visions to life. Showcase your talent and let the world fall in love with your art.</div>
                       <div className='mt-8 flex gap-2 items-center font-medium text-neutral-800 cursor-pointer'>Learn more<HiOutlineArrowSmallRight /></div>
                     </div>
@@ -145,7 +145,7 @@ function App() {
                   <div className='px-6 py-4 gap-2 flex-col max-w-sm min-h-[340px] bg-white  text-neutral-800 text-sm  justify-center items-center border-[1px] border-neutral-200 rounded-md hover:shadow-lg duration-300'>
                     <img  className='w-20 h-20' src="/assets/ship.png"/>
                     <div className="flex flex-col gap-1">
-                      <div className='text-xl mt-2 font-semibold'>Set your art free!</div>
+                      <div className='text-xl mt-2 font-semibold'>Set your art free</div>
                       <div className='text-sm mt-2   text-neutral-500'>Craftera gives you the freedom to price and sell your creations on your terms. It&apos;s your art, your rules—reach buyers who truly value your work.</div>
                       <div className='mt-8 flex gap-2 items-center font-medium text-neutral-800 cursor-pointer'>Learn more<HiOutlineArrowSmallRight /></div>
                     </div>
