@@ -54,18 +54,9 @@ function AboutUs() {
               </div>
             ))}
           </div>
-        </div>     {/* Social media links (optional) */} <div className="title">
-          <h2>Our Social media</h2>
-        </div>
+        </div>    
 
-        <div className="social-media">
-          <a href="" target="_blank" rel="noopener noreferrer">
-            <img src='/assets/insta.png' alt="Instagram" />
-          </a>
-          <a href="" target="_blank" rel="noopener noreferrer">
-            <img src='/assets/whatsapp.png' alt="WhatsApp" />
-          </a>
-        </div>
+        
 
       </div>
     </>
