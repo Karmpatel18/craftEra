@@ -8,7 +8,9 @@ export default {
   			poppins: [
   				'Poppins',
   				'sans-serif'
-  			]
+  			],
+			Inter:['inter']
+
   		},
   		animation: {
   			'spin-slow': 'spin 10s linear infinite',

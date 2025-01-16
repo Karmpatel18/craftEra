@@ -25,28 +25,38 @@ const MainFooter = () => {
 
 
     return (
-        <div className='font-poppins font-light tracking-wide bg-neutral-800 text-white'>
-            <div className="flex flex-row justify-between px-8 py-5 items-center ">
-                <div className="pointer-events-none">&#169; 2024 CraftEra</div>
+        <div className='font-poppins  flex flex-col border-t-[1px] border-neutral-200 bg-neutral-50 text-neutral-800'>
+            <div className="flex flex-row justify-between px-24 py-6 items-center ">
+                
 
                 {/* get in touch section */}
-                <div className="hover:cursor-pointer flex flex-row items-center gap-2 relative group"
-                    onClick={sendEmail}>Get in touch <BiSolidMessageSquareDetail /> <span
-                        className=" rounded-full absolute left-0 inset-5  w-0 h-[1.5px] bg-neutral-100 transition-all duration-300 group-hover:w-full"
+                <div className="flex-col">
+                <div className="text-2xl font-semibold">Contact Us</div>
+                <div className="text-sm font-normal mt-2 text-neutral-500">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</div>
+                <div className=" hover:cursor-pointer inline-flex  flex-row items-center gap-2 relative group text-sm"
+                    onClick={sendEmail}>drop your message here <BiSolidMessageSquareDetail /> <span
+                        className=" rounded-full absolute left-0 inset-5  w-0 h-[1.5px] bg-neutral-800 transition-all duration-300 group-hover:w-full"
                     ></span></div>
+                    </div>
 
 
 
                 {/* social media section */}
-                <div className="flex text-xl flex-row gap-4 h-6 items-center">
+                <div className="flex-col">
+                <div className="text-2xl font-semibold">Follow Us</div>
+                <div className="text-sm font-normal mt-2 text-neutral-500">Stay connected with us on social media</div>
+                <div className="flex text-xl flex-row gap-4 h-8 items-center mt-4">
                     <a href="link to x account" target="_blank" rel="noopener noreferrer">
-                        <div className="hover:shadow-xl hover:cursor-pointer"><FaXTwitter /></div>
+                        <div className="flex p-2  hover:cursor-pointer h-8 items-center justify-center w-8 rounded-full bg-white hover:bg-neutral-100 duration-100 border-[1px] border-neutral-200"><FaXTwitter /></div>
                     </a>
                     <a href="link to x account" target="_blank" rel="noopener noreferrer">
-                        <div className="hover:shadow-xl hover:cursor-pointer"><FaInstagram /></div>
+                        <div className="flex p-2  hover:cursor-pointer h-8 items-center justify-center w-8 rounded-full bg-white hover:bg-neutral-100 duration-100 border-[1px] border-neutral-200"><FaInstagram /></div>
                     </a>
                 </div>
+                </div>
             </div>
+            <div className="flex  m-8 border-t-[1px] border-neutral-200"></div>
+            <div className="pointer-events-none text-neutral-500 text-sm text-center mb-8">&#169; 2024 CraftEra. All rights reserved.</div>
         </div>
     )
 }
