@@ -18,7 +18,7 @@ function Header() {
         <div className="flex flex-row items-center">
           
           <div className="font-bold text-3xl text-neutral-800 ">
-            <img className="h-10" src='/assets/header_logo.png' alt='Craftera' loading='lazy' />
+            <img className="h-10" src='/assets/header1.png' alt='Craftera' loading='lazy' />
           </div>
         </div>
 

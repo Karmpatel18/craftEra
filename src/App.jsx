@@ -40,7 +40,7 @@ function App() {
               <div className="pt-6 text-neutral-800">
               <div className='flex  flex-row justify-center items-center space-x-6 text-neutral-800'>
                
-                <div className='flex  relative text-center font-bold text-6xl'>CraftEra
+                <div className='flex  relative text-center font-bold text-6xl'>Craftera
                   <img className="absolute top-4"src="/assets/underline.png"/>
                 </div>
               </div>
