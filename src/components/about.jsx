@@ -24,7 +24,7 @@ function AboutUs() {
           {/* Our Story */}
           <div className="section card">
             <h3>Our Story ✨</h3>
-            <p>CraftEra was built to satisfy the need for an online platform for artists.</p>
+            <p>Craftera was built to satisfy the need for an online platform for artists.</p>
           </div>
 
           {/* Team Members */}
@@ -45,7 +45,7 @@ function AboutUs() {
 
 
         <div className="feature-about-container">
-          <h2 className="feature-about-title">CraftEra Features</h2>
+          <h2 className="feature-about-title">Craftera Features</h2>
           <div className="feature-about-cards">
             {features.map((feature, index) => (
               <div className="feature-about-card" key={index}>
