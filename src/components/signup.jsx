@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function SignUpPage() {
   return (
     <>
-      <div className="flex mt-28 bg-neutral-200/50 overflow-hidden p-5 rounded-xl w-[1000px] mx-auto my-auto justify-center items-center">
+      <div className="flex mt-28 mb-24 bg-neutral-200/50 overflow-hidden p-5 rounded-xl w-[1000px] mx-auto my-auto justify-center items-center">
         <div className="flex-1 flex flex-col justify-center items-center">
           <h1 className="text-2xl mb-5">Create an Account</h1>
           <form className="flex flex-col w-4/5">
