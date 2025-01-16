@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import CircumIcon from "@klarr-agency/circum-icons-react"; // React
+import Cart from './Cart';
 
 function Header() {
   const[isLoggedIn , setIsLoggedIn] = useState(true);
@@ -40,7 +41,7 @@ function Header() {
                 ? "text-neutral-50  bg-neutral-800 px-4 py-2 duration-300 rounded-lg "
                 : "text-gray-900 hover:bg-neutral-200 bg-opacity-0 px-4 py-2 duration-300 rounded-lg "
             }>Contact</NavLink>
-          
+          <Cart/>
           
           {/* <div onClick={onClick} className="h-8 w-8 text-white rounded-full bg-gray-900"></div> */}
           {isLoggedIn ? (<div className="flex " onClick={onClick}> 

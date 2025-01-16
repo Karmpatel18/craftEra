@@ -11,6 +11,7 @@ import AboutUs from './components/about';
 import './style.css';
 import BuyCart from './components/BuyCart';
 import HeroScroll from './components/HeroScroll';
+import AdvertiseCard from './components/AdvertiseCard';
 
 
 
@@ -39,17 +40,16 @@ function App() {
           element={<>
             <div className='ml-6 mt-28  mr-6 font-poppins bg-neutral-200/50 h-[694px] flex flex-col rounded-lg justify-evenly'>
               <HeroScroll/>
-              <div className="pt-6">
+              <div className="pt-6 text-neutral-800">
               <div className='flex  flex-row justify-center items-center space-x-6 text-neutral-800'>
-                <div className='flex text-center font-bold text-6xl'>Unleash</div>
-                <div>
-                  <img className='h-20 w-20 animate-spin-slow' src='/assets/blue.png' alt="spinning graphic" />
+               
+                <div className='flex  relative text-center font-bold text-6xl'>Unleash Creativity
+                  <img className="absolute -top-8"src="/assets/underline.png"/>
                 </div>
-                <div className='flex text-center font-bold text-6xl'>Creativity</div>
               </div>
 
               <div className="flex flex-row justify-center item-center">
-                <div className='text-center mt-2 font-extralight text-3xl'>
+                <div className='text-center mt-8 font-light text-xl tracking-wider'>
                   Own Masterpieces Discover Art That Speaks to You
                 </div>
               </div>
@@ -99,25 +99,40 @@ function App() {
             </div>
             {/* ends here */}
             </div>  
-            <div className="w-fit h-[800px] overflow-scroll border-2 rounded-lg border-neutral-200/50 m-8 shadow-lg scroll-m-1">
-            <div className='flex flex-wrap mx-2 my-2 justify-evenly '>
-              <Cards cardTitle="Art piece 1" productPrice="1289" />
-              <Cards cardTitle="Art piece 1" productPrice="1289" />
-              <Cards cardTitle="Art piece 1" productPrice="1289" />
-              <Cards cardTitle="Art piece 1" productPrice="1289" />
-              <Cards cardTitle="Art piece 1" productPrice="1289" />
-              <Cards cardTitle="Art piece 1" productPrice="1289" />
-              <Cards cardTitle="Art piece 1" productPrice="1289" />
-              <Cards cardTitle="Art piece 1" productPrice="1289" />
-              <Cards cardTitle="Art piece 1" productPrice="1289" />
-              <Cards cardTitle="Art piece 1" productPrice="1289" />
-              <Cards cardTitle="Art piece 1" productPrice="1289" />
-              <Cards cardTitle="Art piece 1" productPrice="1289" />
-              <Cards cardTitle="Art piece 1" productPrice="1289" />
-              <Cards cardTitle="Art piece 1" productPrice="1289" />
-              
-            </div>
-            </div>
+              <div className="flex border-b-2 border-neutral-200/50 ">
+                <div className="w-3/4 h-[800px] overflow-scroll  border-r-2  border-neutral-200/50   scroll-m-1">
+                  <div className='flex flex-wrap mx-2 my-2 justify-evenly '>
+                    <Cards cardTitle="Art piece 1" productPrice="1289" />
+                    <Cards cardTitle="Art piece 1" productPrice="1289" />
+                    <Cards cardTitle="Art piece 1" productPrice="1289" />
+                    <Cards cardTitle="Art piece 1" productPrice="1289" />
+                    <Cards cardTitle="Art piece 1" productPrice="1289" />
+                    <Cards cardTitle="Art piece 1" productPrice="1289" />
+                    <Cards cardTitle="Art piece 1" productPrice="1289" />
+                    <Cards cardTitle="Art piece 1" productPrice="1289" />
+                    <Cards cardTitle="Art piece 1" productPrice="1289" />
+                    <Cards cardTitle="Art piece 1" productPrice="1289" />
+                    <Cards cardTitle="Art piece 1" productPrice="1289" />
+                    <Cards cardTitle="Art piece 1" productPrice="1289" />
+                    <Cards cardTitle="Art piece 1" productPrice="1289" />
+                    <Cards cardTitle="Art piece 1" productPrice="1289" />
+                
+                  </div>
+                </div>
+                <div className='w-1/4 h-[800px]'>
+                  <AdvertiseCard/>
+                </div>
+              </div>
+              <div className='my-6'>
+                <div className='flex w-full p-4 justify-evenly'>
+                  <div className='p-2 gap-2 flex max-w-sm bg-neutral-50  text-neutral-800 text-sm font-medium justify-center items-center border-[2px] border-neutral-200/50 rounded-lg'><img  className='w-20 h-20' src="/assets/idea.png"/>ajldhaldfahfilasdjfasilfuahfa asdjfhas f shio fashfj sskj fhsaf ilsauf s</div>
+                  
+                  <div className='p-2 gap-2 flex max-w-sm bg-neutral-50  text-neutral-800 text-sm font-medium justify-center items-center border-[2px] border-neutral-200/50 rounded-lg'><img  className='w-20 h-20' src="/assets/ship.png"/>ajldhaldfahfilasdjfasilfuahfa asdjfhas f shio fashfj sskj fhsaf ilsauf s</div>
+                  
+                  <div className='p-2 gap-2 flex max-w-sm bg-neutral-50  text-neutral-800 text-sm font-medium justify-center items-center border-[2px] border-neutral-200/50 rounded-lg'><img  className='w-20 h-20' src="/assets/earn.png"/>ajldhaldfahfilasdjfasilfuahfa asdjfhas f shio fashfj sskj fhsaf ilsauf s</div>
+                  
+                </div>
+              </div>
               
             
            <MainFooter/>
