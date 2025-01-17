@@ -91,12 +91,12 @@ const BuyCart = () => {
         </div>
         </div>
         
-        <div className="text-center w-full border-[1px] border-neutral-200 hover:bg-neutral-100 py-3 rounded-md text-md font-medium text-neutral-950">
+        <div className="cursor:pointer text-center w-full border-[1px] border-neutral-200 hover:bg-neutral-100 py-3 rounded-md text-md font-medium text-neutral-950">
           Pay with Razorpay
         </div>
 
         <div className="flex gap-2  mt-2">
-          <div className="bg-neutral-950 hover:bg-neutral-700 duration-500 w-full py-3 rounded-md text-white text-md font-medium text-center">Buy now</div>
+          <div className=" cursor:pointer bg-neutral-950 hover:bg-neutral-700 duration-500 w-full py-3 rounded-md text-white text-md font-medium text-center">Buy now</div>
           <div className='flex border-[1px] border-neutral-200 font-medium text-md bg-white  rounded-md cursor-pointer w-[56px] h-[50px] items-center justify-center hover:bg-pink-500  hover:text-white duration-150 ' ><PiShoppingCartLight/></div>
         </div>
       </div>
