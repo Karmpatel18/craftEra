@@ -102,18 +102,8 @@ function App() {
             <div className="flex border-b-[1px] border-neutral-200 ">
               <div className="w-3/4 h-[800px] overflow-scroll  border-r-[1px]  border-neutral-200   scroll-m-1">
                 <div className='flex flex-wrap mx-2 my-2 justify-evenly '>
-                  <Cards cardTitle="Art piece 1" productPrice="1289" />
-                  <Cards cardTitle="Art piece 1" productPrice="1289" />
-                  <Cards cardTitle="Art piece 1" productPrice="1289" />
-                  <Cards cardTitle="Art piece 1" productPrice="1289" />
-                  <Cards cardTitle="Art piece 1" productPrice="1289" />
-                  <Cards cardTitle="Art piece 1" productPrice="1289" />
-                  <Cards cardTitle="Art piece 1" productPrice="1289" />
-                  <Cards cardTitle="Art piece 1" productPrice="1289" />
-                  <Cards cardTitle="Art piece 1" productPrice="1289" />
-                  <Cards cardTitle="Art piece 1" productPrice="1289" />
-                  <Cards cardTitle="Art piece 1" productPrice="1289" />
-                  <Cards cardTitle="Art piece 1" productPrice="1289" />
+                  <Cards   />
+                  
 
 
                 </div>
@@ -166,13 +156,13 @@ function App() {
 
           </>
           } />
-        <Route path="/BuyCart" element={<BuyCart />} />
+        
         {/* Login Page */}
         <Route path="/login" element={<SignIn />} />
         <Route path='/about' element={<AboutUs />} />
         {/* Sign Up Page */}
         <Route path="/signup" element={<SignUpPage />} />
-
+<Route path="/product/:id" element={<BuyCart />} />
 
       </Routes>
     </Router>

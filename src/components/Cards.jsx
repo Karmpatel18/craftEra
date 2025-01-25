@@ -2,26 +2,37 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 import BuyCart from './BuyCart'
-
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-function Cards(props) {
+function Cards() {
 
 
 
+  const [products, setProducts] = useState([]);
 
- 
   const navigate = useNavigate();
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch("http://localhost:3001/api/v1/product/preview");
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+    fetchProducts();
+  }, []);
 
-  const handleCardClick = () => {
-    navigate('/buycart', { state: { cardTitle: props.cardTitle, productPrice: props.productPrice } });
-  };
 
 
 
   return (
+    <>
+    {products.map((product) => (
     <div className='font-poppins bg-neutral-100 hover:bg-neutral-300/50 rounded-sm  mt-6  duration-500 hover:scale-[101%] hover:shadow-lg'
-
-      onClick={handleCardClick}
+      key={product.id}
+      onClick={() => navigate(`/product/${product.id}`)}
       style={{ cursor: 'pointer' }}
     >
       <div className=' h-72 w-64 '>
@@ -32,10 +43,12 @@ function Cards(props) {
 
       </div>
       <div className="ml-2">
-        <div className=' pt-2 font-normal tracking-normal text-sm text-neutral-600'>{props.cardTitle}</div>
-        <div className='font-medium  text-md tracking-widest text-neutral-900'>RS. {props.productPrice}</div>
+        <div className=' pt-2 font-normal tracking-normal text-sm text-neutral-600 '>{product.name.length > 20 ? product.name.slice(0, 20) + "..." : product.name}</div>
+        <div className='font-medium  text-md tracking-widest text-neutral-900'>RS. {product.price}</div>
       </div>
     </div>
+    ))}
+    </>
   )
 }
 
