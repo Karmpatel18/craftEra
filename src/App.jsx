@@ -96,8 +96,8 @@ function App() {
               </div>
               {/* ends here */}
             </div>
-            <div className="flex border-b-[1px] border-neutral-200 ">
-              <div className="w-3/4 h-[800px] overflow-scroll  border-r-[1px]  border-neutral-200   scroll-m-1">
+            <div className="flex flex-row-reverse border-b-[1px] border-neutral-200 ">
+              <div className="w-[80%] h-[800px] overflow-scroll  border-l-[1px]  border-neutral-200   scroll-m-1">
                 <div className='flex flex-wrap mx-2 my-2 justify-evenly '>
                   <Cards   />
                   
@@ -105,9 +105,7 @@ function App() {
 
                 </div>
               </div>
-              <div className='w-1/4 h-[800px]'>
-                <AdvertiseCard />
-              </div>
+              
             </div>
 
             <div className='px-24 mt-14 space-y-2 '>

@@ -1,6 +1,7 @@
 import { PiShoppingCartLight } from "react-icons/pi";
 import { useParams, useNavigate } from "react-router-dom";
 import { useState , useEffect } from 'react'
+import { HiMiniArrowLeft } from "react-icons/hi2";
 
 const BuyCart = () => {
   const { id } = useParams();
@@ -58,8 +59,8 @@ const BuyCart = () => {
     <div className="mt-28">
     <button
     onClick={() => navigate("/")}
-    className="px-4 py-2 ml-32 border-[1px] border-neutral-200 rounded-md text-neutral-900  "
-    >back</button>
+    className="flex items-center gap-1 px-3 py-1 ml-32 border-[1px] border-neutral-200 rounded-md text-neutral-900  "
+    ><HiMiniArrowLeft />back</button>
     <div className=' px-24 font-poppins flex flex-row w-full bg-white h-[680px]'>
       {/* left section */}
       {/* <div className='flex-1 flex-col flex '>
