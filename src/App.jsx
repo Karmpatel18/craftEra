@@ -40,16 +40,16 @@ function App() {
               <div className="pt-6 text-neutral-800">
                 <div className='flex  flex-row justify-center items-center space-x-6 text-neutral-800'>
 
-                  <div className='flex  relative text-center font-bold text-6xl'>Craftera
+                  <div className='flex  relative text-center font-semibold tracking-tighter text-6xl'>Craftera
                     <img className="absolute top-4" src="/assets/underline.png" />
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-1 w-full justify-center items-center">
-                  <div className=' mt-8 font-normal  text-xl '>
+                <div className="flex flex-col  w-full justify-center items-center">
+                  <div className=' mt-8 font-normal  text-lg tracking-tighter'>
                     Empowering Artists, Transforming Passions into Profits
                   </div>
-                  <div className='  font-light text-lg max-w-3xl text-center tracking-wider'>
+                  <div className='  font-light text-md max-w-3xl text-center tracking-tight '>
                     A platform where creativity thrives, freedom reigns, and artistry earns its true value
                   </div>
                 </div>
@@ -58,7 +58,7 @@ function App() {
                 <div className='flex justify-center'>
                   <button
                     onClick={smoothScroll}
-                    className='px-8 py-4 mt-10 rounded-full bg-neutral-800 ring-2 ring-pink-400 text-white font-medium'>
+                    className='px-8 py-4 mt-10 rounded-full bg-neutral-800 ring-[1px] tracking-tight ring-pink-400 text-white font-medium'>
                     Explore products
                   </button>
                 </div>
@@ -70,10 +70,7 @@ function App() {
             {/* search bar and category section starts */}
             <div id="target-section">
               <div className="mt-8 border-y-[1px] border-neutral-200">
-                <div className='font-poppins px-8 pt-10 text-3xl font-medium'>
-                  &#128075; Hey welcome back user1!!
-                </div>
-
+                
 
 
 
