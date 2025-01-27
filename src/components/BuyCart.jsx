@@ -4,6 +4,13 @@ import { useState , useEffect } from 'react'
 import { HiMiniArrowLeft } from "react-icons/hi2";
 
 const BuyCart = () => {
+  const images = [
+    "https://images.pexels.com/photos/2964117/pexels-photo-2964117.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "https://images.pexels.com/photos/3778180/pexels-photo-3778180.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "https://images.pexels.com/photos/30248649/pexels-photo-30248649/free-photo-of-industrial-art-space-with-abstract-paintings.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  ];
+  const [heroImage , setHeroImage] = useState(images[0]);
+  
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [error, setError] = useState(null);
@@ -46,11 +53,7 @@ const BuyCart = () => {
     return <div className="p-4 mt-28">Loading...</div>;
   }
 
-  // const images = [
-  //   "https://images.pexels.com/photos/2964117/pexels-photo-2964117.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  //   "https://images.pexels.com/photos/3778180/pexels-photo-3778180.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  //   "https://images.pexels.com/photos/30248649/pexels-photo-30248649/free-photo-of-industrial-art-space-with-abstract-paintings.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  // ];
+  
   
   
 
@@ -63,7 +66,7 @@ const BuyCart = () => {
     ><HiMiniArrowLeft />back</button>
     <div className=' px-24 font-poppins flex flex-row w-full bg-white h-[680px]'>
       {/* left section */}
-      {/* <div className='flex-1 flex-col flex '>
+      <div className='flex-1 flex-col flex '>
         <div className=' h-[360px] w-auto m-8 rounded-xl  '>
           <img className='h-[100%] w-[100%] object-cover rounded-sm' src={heroImage}
             loading="lazy"
@@ -80,7 +83,7 @@ const BuyCart = () => {
             />
           ))}
         </div>
-      </div> */}
+      </div>
       {/* right section */}
       <div className='flex-1 m-8'>
         <div className='flex flex-col font-medium tracking-tighter text-3xl  '>
