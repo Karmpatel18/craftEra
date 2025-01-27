@@ -1,3 +1,8 @@
+@import "tailwindcss";
+
+@theme{
+  --font-poppins:"Poppins"
+}
 /* Remove default scrollbar in WebKit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
   display: none;
@@ -15,8 +20,7 @@ html, body {
 
 
 
-@tailwind base;
-@tailwind components;
+
 @tailwind utilities;
 @layer base {
   :root {
@@ -72,32 +76,4 @@ html, body {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%
   }
-}
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-marquee {
-  animation: marquee 40s linear infinite;
-  min-width: max-content;
-  animation-play-state: running;
-  transition: animation-play-state 0.5s ease;
-}
-
-.animate-marquee:hover {
-  animation-play-state: paused;
 }

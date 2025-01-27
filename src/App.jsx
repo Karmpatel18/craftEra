@@ -2,14 +2,15 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Cards from './components/Cards';
 import MainFooter from './components/MainFooter';
-import SignIn from './components/login';
-import SignUpPage from './components/signup';
+import SignIn from './components/auth/login';
+import SignUpPage from './components/auth/signup';
 import AboutUs from './components/about';
 import './style.css';
 import BuyCart from './components/BuyCart';
 import HeroScroll from './components/HeroScroll';
-import AdvertiseCard from './components/AdvertiseCard';
+
 import { HiOutlineArrowSmallRight } from "react-icons/hi2";
+import SearchBar from './components/searchSideBar/SearchBar';
 
 
 
@@ -35,7 +36,7 @@ function App() {
         <Route
           path="/"
           element={<>
-            <div className='ml-6 mt-28  mr-6 font-poppins bg-neutral-200/50 h-[694px] flex flex-col rounded-lg justify-evenly'>
+            <div className='ml-6 mt-24  mr-6 font-poppins bg-neutral-200/50 h-[694px] flex flex-col rounded-lg justify-evenly'>
               <HeroScroll />
               <div className="pt-6 text-neutral-800">
                 <div className='flex  flex-row justify-center items-center space-x-6 text-neutral-800'>
@@ -69,45 +70,24 @@ function App() {
             </div>
             {/* search bar and category section starts */}
             <div id="target-section">
-              <div className="mt-8 border-y-[1px] border-neutral-200">
-                
-
-
-
-
-
-                <div className="font-poppins flex flex-row my-8 space-x-4">
-                  <div className="max-w-lg ml-8 flex-1">
-                    <div className='flex flex-row '>
-                      <input type='type' placeholder='Enter product name ' className=' font-normal text-md placeholder:text-neutral-500 focus:outline-none  w-42 md:w-full bg-neutral-200/50 rounded-l-full px-4 py-[10px] '></input>
-                      <div className="flex ">
-                        <button className='px-4 bg-neutral-800 text-white border-2 border-neutral-400 rounded-r-full -translate-x-[2px]'>search</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div className='flex font-medium space-x-4'>
-                    <button className="bg-neutral-200/50 text-slate-800 rounded-full px-10 max-w-lg hover:ring-neutral-500 ring-inset ring-neutral-200/50 ring-2 duration-500">Art</button>
-                    <button className="bg-neutral-200/50 text-slate-800 rounded-full px-10 max-w-lg hover:ring-neutral-500 ring-inset ring-neutral-200/50 ring-2 duration-500">Handicraft</button>
-                    <button className="bg-neutral-200/50 text-slate-800 rounded-full px-10 max-w-lg hover:ring-neutral-500 ring-inset ring-neutral-200/50 ring-2 duration-500">Painting</button>
-                    <button className="bg-neutral-800 text-white rounded-full px-10 max-w-lg hover:ring-neutral-500 ring-inset ring-neutral-200/50 ring-2 duration-500">All</button>
-                  </div>
-                </div>
-
-              </div>
-              {/* ends here */}
-            </div>
-            <div className="flex flex-row-reverse border-b-[1px] border-neutral-200 ">
-              <div className="w-[80%] h-[800px] overflow-scroll  border-l-[1px]  border-neutral-200   scroll-m-1">
-                <div className='flex flex-wrap mx-2 my-2 justify-evenly '>
-                  <Cards   />
-                  
-
-
-                </div>
-              </div>
+            </div> 
               
-            </div>
+            
+            <div className="flex mt-12 border-y-[1px] border-neutral-200 ">
+              
+              <div className=' w-[25%] p-6'>
+                <SearchBar />
+              </div>
+              <div className="w-[75%] h-[800px] overflow-scroll  border-l-[1px]  border-neutral-200   scroll-m-1">
+                <div className='flex flex-wrap mx-2 my-2 justify-evenly '>
+                  <Cards />
 
+
+
+                </div>
+              </div>
+            </div>
+            
             <div className='px-24 mt-14 space-y-2 '>
               <div className='text-4xl  font-semibold text-neutral-800 '> Get started with Craftera
               </div>
@@ -151,13 +131,13 @@ function App() {
 
           </>
           } />
-        
+
         {/* Login Page */}
         <Route path="/login" element={<SignIn />} />
         <Route path='/about' element={<AboutUs />} />
         {/* Sign Up Page */}
         <Route path="/signup" element={<SignUpPage />} />
-<Route path="/product/:id" element={<BuyCart />} />
+        <Route path="/product/:id" element={<BuyCart />} />
 
       </Routes>
     </Router>

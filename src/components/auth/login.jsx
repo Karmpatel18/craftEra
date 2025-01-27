@@ -39,7 +39,7 @@ function SignInPage() {
           </button>
         </form>
         <p className="mt-5 text-base">
-          Don't have an account? <Link to="/signup" className="text-pink-400 hover:underline">Sign up</Link>
+          Don&apos;t have an account? <Link to="/signup" className="text-pink-400 hover:underline">Sign up</Link>
         </p>
       </div>
     </div>
