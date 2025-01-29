@@ -73,13 +73,13 @@ function App() {
             </div> 
               
             
-            <div className="flex mt-12 border-y-[1px] border-neutral-200 ">
+            <div className="flex flex-col mt-12 border-y-[1px] border-neutral-200 ">
               
-              <div className=' w-[25%] p-6'>
+              <div className='flex mx-28 my-2   '>
                 <SearchBar />
               </div>
-              <div className="w-[75%] h-[800px] overflow-scroll  border-l-[1px]  border-neutral-200   scroll-m-1">
-                <div className='flex flex-wrap p-6 justify-around '>
+              <div className="flex mx-28 h-[800px] overflow-scroll    border-neutral-200   scroll-m-1">
+                <div className='flex flex-wrap  justify-between border-[1px] border-neutral-200 rounded-sm p-6'>
                   <Cards />
 
 

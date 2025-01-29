@@ -30,7 +30,7 @@ function Cards() {
   return (
     <>
     {products.map((product) => (
-    <div className='font-poppins border-[1px] border-neutral-200 bg-neutral-50 rounded-sm  mb-6   duration-500 hover:scale-[101%] hover:shadow-md '
+    <div className='font-poppins border-[1px] h-min border-neutral-200 bg-neutral-50 rounded-sm  mb-6   duration-500 hover:scale-[101%] hover:shadow-md '
       key={product.id}
       onClick={() => navigate(`/product/${product.id}`)}
       style={{ cursor: 'pointer' }}
