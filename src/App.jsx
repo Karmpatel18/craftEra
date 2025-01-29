@@ -11,6 +11,8 @@ import HeroScroll from './components/HeroScroll';
 
 import { HiOutlineArrowSmallRight } from "react-icons/hi2";
 import SearchBar from './components/searchSideBar/SearchBar';
+import ProfilePage from './components/userProfile/ProfilePage';
+import ProductSelling from './components/userProfile/ProductSelling';
 
 
 
@@ -135,6 +137,8 @@ function App() {
         {/* Login Page */}
         <Route path="/login" element={<SignIn />} />
         <Route path='/about' element={<AboutUs />} />
+        <Route path='/account' element={<ProfilePage />} />
+        <Route path='/account/sell' element={<ProductSelling />} />
         {/* Sign Up Page */}
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/product/:id" element={<BuyCart />} />

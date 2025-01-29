@@ -1,19 +1,12 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { NavLink } from "react-router-dom";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+
 
 
 import Cart from './Cart';
 import { HiOutlineArrowRight } from "react-icons/hi2";
+import UserProfile from './nav/UserProfile';
 
 function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -61,36 +54,20 @@ function Header() {
           </NavLink>
           <Cart />
 
-          {/* <div onClick={onClick} className="h-8 w-8 text-white rounded-full bg-gray-900"></div> */}
-          {isLoggedIn ? (<div className="flex " onClick={onClick}>
+          
+          <div className="flex " onClick={onClick}>
             <Link to="/login">
               {isLoggedIn && <div className='flex ring-[1px] ring-inset ring-neutral-700 rounded-md  gap-2 px-3 py-2 items-center text-center hover:bg-neutral-900 hover:text-neutral-50 transition-all duration-300 hover:scale-[110%] group'><div className=" text-gray-800 group-hover:text-neutral-50 transition-all duration-300  text-ellipsis font-normal tracking-tighter">Get started</div><div className="flex items-center justify-center h-6 w-6"><HiOutlineArrowRight /></div></div>}
             </Link>
-            {/* <Link to="/signup">
-                { isLoggedIn && <div className="px-4 py-2 text-white rounded-lg bg-gray-900">Sign up</div>}
-              </Link> */}
-          </div>) : (<div className="">
-            <Avatar>
-              <DropdownMenu>
-                <DropdownMenuTrigger>
-                  <AvatarImage src="https://github.com/shadcn.png" />
-                  <AvatarFallback>CN</AvatarFallback>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  <DropdownMenuLabel>user</DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem>Profile</DropdownMenuItem>
-                  <DropdownMenuItem>Selling</DropdownMenuItem>
-                  <DropdownMenuItem>Orders</DropdownMenuItem>
-                  <DropdownMenuItem>Setting</DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-
-            </Avatar>
-
+            
+          </div>
+          <div className="">
+            <NavLink to="/account" >
+              <UserProfile/>
+              </NavLink>
           </div>
 
-          )}
+          
         </div>
       </div>
     </>

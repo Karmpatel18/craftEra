@@ -15,7 +15,7 @@ function SearchBar() {
         </select>
         <div className="border-l-[1px] my-[10px] mx-2 border-neutral-200"></div>
         <input type="search" placeholder="search" className="placeholder:tracking-tighter placeholder:text-neutral-900 w-full outline-none   px-1 py-2   " />
-        <div className="flex py-2 px-3  bg-neutral-900 text-neutral-50 rounded-[4px] items-center justify-center">Search</div>
+        <div className="flex py-2 px-3 cursor-pointer bg-neutral-900 text-neutral-50 rounded-[4px] items-center justify-center">Search</div>
       </div>
 
     </div>
