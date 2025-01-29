@@ -137,8 +137,8 @@ function App() {
         {/* Login Page */}
         <Route path="/login" element={<SignIn />} />
         <Route path='/about' element={<AboutUs />} />
-        <Route path='/account' element={<ProfilePage />} />
-        <Route path='/account/sell' element={<ProductSelling />} />
+        <Route path='/account/*' element={<ProfilePage />} />
+        {/* <Route path='/account/sell' element={<ProductSelling />} /> */}
         {/* Sign Up Page */}
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/product/:id" element={<BuyCart />} />
