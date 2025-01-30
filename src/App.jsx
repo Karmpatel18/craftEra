@@ -72,11 +72,11 @@ function App() {
             </div>
             {/* search bar and category section starts */}
             <div id="target-section">
-            </div> 
-              
-            
+            </div>
+
+
             <div className="flex flex-col mt-12 border-y-[1px] border-neutral-200 ">
-              
+
               <div className='flex mx-28 my-2   '>
                 <SearchBar />
               </div>
@@ -89,7 +89,7 @@ function App() {
                 </div>
               </div>
             </div>
-            
+
             <div className='px-24 mt-14 space-y-2 '>
               <div className='text-4xl  font-semibold text-neutral-800 '> Get started with Craftera
               </div>
@@ -134,11 +134,12 @@ function App() {
           </>
           } />
 
-        {/* Login Page */}
+        {/* routes  */}
+
         <Route path="/login" element={<SignIn />} />
         <Route path='/about' element={<AboutUs />} />
         <Route path='/account/*' element={<ProfilePage />} />
-        {/* <Route path='/account/sell' element={<ProductSelling />} /> */}
+
         {/* Sign Up Page */}
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/product/:id" element={<BuyCart />} />

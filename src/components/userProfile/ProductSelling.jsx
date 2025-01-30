@@ -1,6 +1,6 @@
 function ProductSelling() {
   return (
-    <div className="mt-28">
+    <div className="flex ">
        
       selling fruit juice here 
     </div>
