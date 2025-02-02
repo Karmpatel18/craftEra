@@ -9,7 +9,7 @@ export default function ProfilePage() {
   return (
     <div className="mt-28 flex mx-28 border-[1px] border-neutral-200 h-[664px]   rounded-md">
       <div className="flex flex-col border-r-[1px] border-neutral-200   ">
-      <Link to = '/account/profile'>
+      <Link to = '/account/'>
       <div className='font-medium  tracking-tighter text-neutral-900  w-56 px-4 py-2'> Profile </div>
       </Link>
       <div className='flex border-t-[1px] border-neutral-200'></div>
@@ -29,7 +29,7 @@ export default function ProfilePage() {
 
       <div className="flex w-full h-[100%] items-center justify-center p-4">
       <Routes>
-        <Route path = '/profile'element={<RevenuePage/>}/>
+        <Route path = '/'element={<RevenuePage/>}/>
         <Route path = '/sell'element={<ProductSelling/>}/>
         <Route path = '/orders'element={<OrdersPage/>}/>
         <Route path = '/settings'element={<SettingsPage/>}/>
