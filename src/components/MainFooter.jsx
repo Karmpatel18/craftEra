@@ -56,7 +56,7 @@ const MainFooter = () => {
                 </div>
             </div>
             <div className="flex  m-8 border-t-[1px] border-neutral-200"></div>
-            <div className="pointer-events-none text-neutral-500 text-sm text-center mb-8">&#169; 2024 Craftera. All rights reserved.</div>
+            <div className="pointer-events-none text-neutral-500 text-sm text-center mb-8">© {new Date().getFullYear()} Craftera. All rights reserved.</div>
         </div>
     )
 }
