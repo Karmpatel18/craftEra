@@ -12,7 +12,7 @@ import HeroScroll from './components/HeroScroll';
 import { HiOutlineArrowSmallRight } from "react-icons/hi2";
 import SearchBar from './components/searchSideBar/SearchBar';
 import ProfilePage from './components/userProfile/ProfilePage';
-import ProductSelling from './components/userProfile/ProductSelling';
+import Revenue from './components/userProfile/Revenue';
 
 
 
