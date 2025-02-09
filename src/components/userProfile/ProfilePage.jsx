@@ -20,7 +20,7 @@ export default function ProfilePage() {
             className={({ isActive }) =>
               isActive
                 ? "bg-neutral-100 rounded-sm m-1 duration-300 transition-all"
-                : "bg-none rounded-sm m-1 duration-300 transition-all  "
+                : "bg-none rounded-sm m-1 duration-300 transition-all hover:bg-neutral-100 "
             }>
             <div className='flex  tracking-tighter text-neutral-800   px-4 py-2 gap-2 items-center '><div className='text-neutral-800'><CgProfile size={18} /></div> Profile </div>
           </NavLink>
@@ -29,7 +29,7 @@ export default function ProfilePage() {
             className={({ isActive }) =>
               isActive
                 ? "bg-neutral-100 rounded-sm m-1 duration-300 transition-all"
-                : "bg-none rounded-sm m-1 duration-300 transition-all  "
+                : "bg-none rounded-sm m-1 duration-300 transition-all hover:bg-neutral-100 "
             }>
             <div className='flex gap-2 items-center  tracking-tighter text-neutral-900   px-4 py-2 '> <div className='text-neutral-800'><MdOutlineSell size={18} /></div>Selling </div>
           </NavLink>
@@ -38,7 +38,7 @@ export default function ProfilePage() {
             className={({ isActive }) =>
               isActive
                 ? "bg-neutral-100 rounded-sm m-1 duration-300 transition-all"
-                : "bg-none rounded-sm m-1 duration-300 transition-all  "
+                : "bg-none rounded-sm m-1 duration-300 transition-all hover:bg-neutral-100 "
             }>
             <div className='flex gap-2 items-center  tracking-tighter text-neutral-900   px-4 py-2 '><div className="text-neutral-800"><PiDatabaseLight size={18} /></div> Orders </div>
           </NavLink>
@@ -47,7 +47,7 @@ export default function ProfilePage() {
             className={({ isActive }) =>
               isActive
                 ? "bg-neutral-100 rounded-sm m-1 duration-300 transition-all"
-                : "bg-none rounded-sm m-1 duration-300 transition-all  "
+                : "bg-none rounded-sm m-1 duration-300 transition-all hover:bg-neutral-100 "
             }>
             <div className='flex gap-2 items-center  tracking-tighter text-neutral-900   px-4 py-2 '><div className='text-neutral-800'><VscSettings size={18} /></div> Setting </div>
           </NavLink>
