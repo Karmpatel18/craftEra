@@ -62,7 +62,7 @@ export default function RevenuePage() {
             <div className="flex flex-col gap-2 w-full mt-4 mx-4  ">
               {Object.keys(userData).map((key) => (
                 <div key={key}>
-                  <label className="text-sm font-normal tracking-tighter text-neutral-900">{key}</label>
+                  <label className="text-sm cursor-default font-normal tracking-tighter text-neutral-900">{key}</label>
                   {isEditing ? (
                   <input 
                   type="text" 
@@ -79,7 +79,7 @@ export default function RevenuePage() {
               ))}
               <button
                 onClick={() => setIsEditing(!isEditing) }
-                className="mt-4 px-3 py-2 bg-neutral-900 text-neutral-50 rounded-sm tracking-tighter duration-300 transition-all"
+                className="mt-4 max-w-36 px-3 cursor-pointer py-2 bg-neutral-900 text-neutral-50 rounded-sm tracking-tighter duration-300 transition-all"
                 >{isEditing ? "save" : "Update details"}
               </button>
               </div>
