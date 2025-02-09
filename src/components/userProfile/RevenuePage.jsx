@@ -79,7 +79,7 @@ export default function RevenuePage() {
               ))}
               <button
                 onClick={() => setIsEditing(!isEditing) }
-                className="mt-4 max-w-36 px-3 cursor-pointer py-2 bg-neutral-900 text-neutral-50 rounded-sm tracking-tighter duration-300 transition-all"
+                className="mt-4 max-w-36 px-3 cursor-pointer py-2 bg-neutral-900 text-neutral-50 rounded-md mb-2 tracking-tighter duration-300 transition-all"
                 >{isEditing ? "save" : "Update details"}
               </button>
               </div>
