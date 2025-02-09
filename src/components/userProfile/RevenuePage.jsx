@@ -1,13 +1,26 @@
 import { MdLocationPin } from "react-icons/md";
 
-
+import { useState } from "react";
 
 
 export default function RevenuePage() {
+  const [isEditing, setIsEditing] = useState(false);
+  const [userData, setUserData] = useState({
+    name: "Karm patel",
+    email: "karmpatel.dev@gmail.com",
+    address: "a 502 asfsafslkfh ss lksjf sljfk sf ",
+    phone: "+918372948"
+  });
+
+
+  const handleChange = (e) => {
+    setUserData({ ...userData, [e.target.name]: e.target.value });
+  };
+
   return (
     <>
       <div className="h-full w-fit  flex flex-col p-4 ">
-        
+
         <div className="userOverview  h-auto gap-15 w-fit flex items-center mx-4">
 
           <div className=" w-[198px]  rounded-full overflow-hidden flex items-center justify-center">
@@ -34,24 +47,45 @@ export default function RevenuePage() {
 
             <div className=" flex items-center ">
               <div className=" px-2 py-1 bg-neutral-900 text-sm text-neutral-50 flex gap-1 rounded-full font-light  items-center">
-                <MdLocationPin size={14}/>
-               <div className="pr-1">Delhi</div>
+                <MdLocationPin size={14} />
+                <div className="pr-1">Delhi</div>
               </div>
-             
+
             </div>
           </div>
         </div>
         <div className="flex  border-t-[1px] border-neutral-200 w-full mt-4 ">
-          
+
           <div className="flex w-full">
-           
-              
-              <div className="flex flex-col w-full mt-4 mx-4 ">
-                <label className="text-sm font-normal tracking-tighter text-neutral-900">Name</label>
-                <input type="text" placeholder="name" className="border-[1px] border-neutral-200 placeholder:text-sm placeholder:text-neutral-500 px-3 py-2 w-full rounded-md bg-white" />
+
+
+            <div className="flex flex-col gap-2 w-full mt-4 mx-4  ">
+              {Object.keys(userData).map((key) => (
+                <div key={key}>
+                  <label className="text-sm font-normal tracking-tighter text-neutral-900">{key}</label>
+                  {isEditing ? (
+                  <input 
+                  type="text" 
+                  
+                  
+                  name={key}
+                  value={userData[key]}
+                  onChange={handleChange}
+                  className="border-[1px] border-neutral-200 placeholder:text-sm placeholder:text-neutral-500 px-3 py-2 w-full rounded-md bg-white " />
+              ) : (<div className="border-[1px] border-neutral-200 placeholder:text-sm placeholder:text-neutral-500 px-3 py-2 w-full rounded-md bg-white">{userData[key]}</div>
+
+              )}
+                </div>
+              ))}
+              <button
+                onClick={() => setIsEditing(!isEditing) }
+                className="mt-4 px-3 py-2 bg-neutral-900 text-neutral-50 rounded-sm tracking-tighter duration-300 transition-all"
+                >{isEditing ? "save" : "Update details"}
+              </button>
               </div>
-            
-            
+              
+
+
 
           </div>
 
