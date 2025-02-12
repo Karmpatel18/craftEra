@@ -1,19 +1,15 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 import { NavLink } from "react-router-dom";
-
-
-
 import Cart from './Cart';
 import { HiOutlineArrowRight } from "react-icons/hi2";
 import UserProfile from './nav/UserProfile';
+import useAuth from '../hooks/useAuth';
 
 function Header() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const isAuthenticated = useAuth();
 
-  const onClick = () => {
-    setIsLoggedIn(prev => !prev);
-  }
+
+
   // const scrollToBottom = () => {
   //   window.scrollTo({
   //     top: document.documentElement.scrollHeight,
@@ -54,20 +50,27 @@ function Header() {
           </NavLink>
           <Cart />
 
-          
-          <div className="flex " onClick={onClick}>
-            <Link to="/login">
-              {isLoggedIn && <div className='flex ring-[1px] ring-inset ring-neutral-700 rounded-md  gap-2 px-3 py-2 items-center text-center hover:bg-neutral-900 hover:text-neutral-50 transition-all duration-300 hover:scale-[110%] group'><div className=" text-gray-800 group-hover:text-neutral-50 transition-all duration-300  text-ellipsis font-normal tracking-tighter">Get started</div><div className="flex items-center justify-center h-6 w-6"><HiOutlineArrowRight /></div></div>}
-            </Link>
-            
-          </div>
-          <div className="">
-            <NavLink to="/account" >
-              <UserProfile/>
-              </NavLink>
+
+          <div>
+            {isAuthenticated ? (<div className="flex">
+              <Link to="/account" >
+                <UserProfile />
+              </Link>
+            </div>) : (<Link to="/login">
+              <div className='flex ring-[1px] ring-inset ring-neutral-700 rounded-md  gap-2 px-3 py-2 items-center text-center hover:bg-neutral-900 hover:text-neutral-50 transition-all duration-300 hover:scale-[110%] group'>
+                <div className=" text-gray-800 group-hover:text-neutral-50 transition-all duration-300  text-ellipsis font-normal tracking-tighter">Get started</div>
+                <div className="flex items-center justify-center h-6 w-6">
+                  <HiOutlineArrowRight />
+                </div>
+              </div>
+            </Link>)}
+
+
+
           </div>
 
-          
+
+
         </div>
       </div>
     </>

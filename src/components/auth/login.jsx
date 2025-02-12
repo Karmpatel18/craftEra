@@ -27,6 +27,7 @@ function SignInPage() {
 
       // Navigate to the dashboard or homepage after successful login
       navigate("/");
+      window.location.reload();
 
     } catch (err) {
       // Handle errors
