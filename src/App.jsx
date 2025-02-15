@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route , Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import Cards from './components/Cards';
 import MainFooter from './components/MainFooter';
@@ -11,7 +11,7 @@ import HeroScroll from './components/HeroScroll';
 
 import { HiOutlineArrowSmallRight } from "react-icons/hi2";
 import SearchBar from './components/searchSideBar/SearchBar';
-import ProfilePage from './components/userProfile/ProfilePage';
+import ProfilePage from './components/userProfile/ProfilePage.jsx';
 
 
 
