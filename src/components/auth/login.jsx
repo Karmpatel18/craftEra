@@ -14,7 +14,7 @@ function SignInPage() {
 
     try {
       // Send POST request to the backend
-      const response = await axios.post("http://localhost:3001/api/v1/user/signin", {
+      const response = await axios.post("https://backend-practice-production-7f56.up.railway.app/api/v1/user/signin", {
         username,
         password,
       });

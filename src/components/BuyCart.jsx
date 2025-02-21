@@ -20,7 +20,7 @@ const BuyCart = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`http://localhost:3001/api/v1/product/${id}`);
+        const response = await fetch(`https://backend-practice-production-7f56.up.railway.app/api/v1/product/${id}`);
         const data = await response.json();
 
         if (response.ok) {

@@ -14,7 +14,7 @@ function Cards() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://localhost:3001/api/v1/product/preview");
+        const response = await fetch("https://backend-practice-production-7f56.up.railway.app/api/v1/product/preview");
         const data = await response.json();
         setProducts(data);
       } catch (error) {

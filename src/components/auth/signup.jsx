@@ -11,7 +11,7 @@ export default function SignUpPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3001/api/v1/user/signup", { username, password })
+      const response = await axios.post("https://backend-practice-production-7f56.up.railway.app/api/v1/user/signup", { username, password })
       setUser(response.data)
       navigate("/login");
     } catch (error) {
