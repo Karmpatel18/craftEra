@@ -38,14 +38,16 @@ const BuyCart = () => {
 
   if (error) {
     return (
-      <div className="p-4 mt-28">
-        <p className="text-red-500">{error}</p>
+      <div className="w-full flex justify-center">
+      <div className="flex flex-col max-w-sm  w-full justify-center p-4 mt-28">
+        <div className="text-neutral-400 text-sm">{error}</div>
         <button
           onClick={() => navigate("/")}
-          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+          className="mt-4 px-4 py-2 bg-neutral-900 text-neutral-50 rounded hover:bg-neutral-800 transition"
         >
           Back to Products
         </button>
+      </div>
       </div>
     );
   }

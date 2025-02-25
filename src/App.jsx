@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route , Navigate } from 'react-router-dom';
-import Header from './components/Header';
 import Cards from './components/Cards';
 import MainFooter from './components/MainFooter';
 import SignIn from './components/auth/login';
@@ -7,11 +6,15 @@ import SignUpPage from './components/auth/signup';
 import AboutUs from './components/about';
 import './style.css';
 import BuyCart from './components/BuyCart';
-import HeroScroll from './components/HeroScroll';
+import { FaStar } from "react-icons/fa6";
+import { FaStarHalfStroke } from "react-icons/fa6";
+
+
 
 import { HiOutlineArrowSmallRight } from "react-icons/hi2";
 import SearchBar from './components/searchSideBar/SearchBar';
 import ProfilePage from './components/userProfile/ProfilePage';
+import Navbar from './components/nav/Navbar';
 
 
 
@@ -28,45 +31,51 @@ function App() {
     }
   }
   return (
-    <><Router>
-      <div className='fixed top-0 flex left-0 w-full  backdrop-blur-lg  z-50'>
-        <Header />
+    <div className='flex w-full justify-between flex-col h-full'><Router>
+      <div className='  flex left-0 w-full  backdrop-blur-lg  z-50'>
+        <Navbar/>
       </div>
       <Routes>
         {/* Home Page */}
         <Route
           path="/"
           element={<>
-            <div className='ml-6 mt-24  mr-6 font-poppins bg-neutral-200/50 h-[694px] flex flex-col rounded-lg justify-evenly'>
-              <HeroScroll />
-              <div className="pt-6 text-neutral-800">
-                <div className='flex  flex-row justify-center items-center space-x-6 text-neutral-800'>
-
-                  <div className='flex  relative text-center font-semibold tracking-tighter text-6xl'>Craftera
-                    <img className="absolute top-4" src="/assets/underline.png" />
+            <div className='flex px-8 font-poppins gap-14 bg-white h-[706px] rounded-md mx-22 py-20'>
+              <div className='flex flex-col'>
+                <div className='text-5xl flex text-nowrap  font-medium text-neutral-900 tracking-tighter my-4'>Put people first</div>
+                <div className='flex max-w-lg text-neutral-670 text-md  mt-6 tracking-tight text-wrap'>Fast, user-friendly and engaging - turn HR into people and culture and streamline your daily operations with your own branded app</div>
+                <div className=' mt-8 flex border-[1px] w-full justify-between p-1 rounded-lg border-neutral-300 items-center'>
+                  <div className='px-3 tracking-tight'>Get started</div>
+                  <div className='bg-neutral-800 text-neutral-50 px-6 py-2 rounded-md font-medium tracking-tight'>watch</div>
+                </div>
+                <div className='flex w-full gap-6 mt-10'>
+                  <div className="flex flex-col">
+                    <div className='flex text-3xl font-semibold'>75.2%</div>
+                    <div className='flex text-sm font-normal tracking-tight pb-6'>Average daily activity</div>
                   </div>
+                  <div className='h-full border-r-[1px] border-neutral-200'></div>
+                  <div className="flex flex-col">
+                    <div className='text-3xl font-semibold'>~20k</div>
+                    <div className='text-sm font-normal tracking-tight pd-6'>Average daily users</div>
+                  </div>
+                 
+                </div>
+                <div className='w-full border-b-[1px] border-neutral-200'></div>
+                <div className="flex mt-3 gap-4 items-center">
+                  <div className='flex gap-1.5'>
+                    <FaStar size={22}/>
+                    <FaStar size={22}/>
+                    <FaStar size={22}/>
+                    <FaStar size={22}/>
+                    <FaStarHalfStroke size={22}/>
+                    </div>
+                    <div className='text-md font-medium text-neutral-900'>4.5</div>
+                    <div className='text-sm tracking-tighter font-normal text-neutral-500'>Average user rating</div>
                 </div>
 
-                <div className="flex flex-col  w-full justify-center items-center">
-                  <div className=' mt-8 font-normal  text-lg tracking-tighter'>
-                    Empowering Artists, Transforming Passions into Profits
-                  </div>
-                  <div className='  font-light text-md max-w-3xl text-center tracking-tight '>
-                    A platform where creativity thrives, freedom reigns, and artistry earns its true value
-                  </div>
-                </div>
-
-                {/* home page button */}
-                <div className='flex justify-center'>
-                  <button
-                    onClick={smoothScroll}
-                    className='px-8 py-4 mt-10 rounded-full bg-neutral-800 ring-[1px] tracking-tight ring-pink-400 text-white font-medium'>
-                    Explore products
-                  </button>
-                </div>
-                <div className='flex justify-center mt-10'>
-                  <img className="w-8 h-8 animate-bounce text-white opacity-20" src="/assets/down-arrow.svg" alt="down arrow" />
-                </div>
+              </div>
+              <div className='w-full h-auto bg-neutral-200  rounded-lg p-4'>
+                <div className='w-full h-full bg-neutral-300 rounded-lg'> </div>
               </div>
             </div>
             {/* search bar and category section starts */}
@@ -151,7 +160,7 @@ function App() {
       <MainFooter />
 
 
-    </>
+    </div>
   );
 }
 
