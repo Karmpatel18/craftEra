@@ -2,7 +2,7 @@
 import RevCard from "../cards/RevCard"
 function OrdersPage() {
   return (
-    <div className="block h-full w-full bg-white">
+    <div className="block h-full w-full bg-green-100">
       <div className="py-3 px-2  flex justify-between border-b-[1px]  border-neutral-200 ">
         <div className="text-xl  flex items-center px-2 font-medium tracking-tighter">Overview</div>
         <div className="calender flex  border-[1px] px-3 py-2 border-neutral-200 rounded-md gap-4 items-center  w-fit">
