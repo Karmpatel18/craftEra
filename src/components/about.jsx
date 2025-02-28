@@ -15,7 +15,7 @@ function AboutUs() {
 
   return (
     <>
-      <div className='mt-28'>
+      <div className=''>
         {/* About Us Section header */}
         
 

@@ -12,7 +12,7 @@ import { VscSettings } from "react-icons/vsc";
 export default function ProfilePage() {
   return (
     <>
-      <div className='mt-28 flex w-full border-t-[1px] border-neutral-200'></div>
+      <div className=' flex w-full border-t-[1px] border-neutral-200'></div>
       <div className=" flex mx-28 border-x-[1px] border-neutral-200">
         <div className="font-normal flex flex-col border-r-[1px] border-neutral-200 w-sm  ">
           <div className='font-semibold tracking-tighter text-2xl text-neutral-800 px-4 py-3 mb-6 m-1'>My profile</div>
