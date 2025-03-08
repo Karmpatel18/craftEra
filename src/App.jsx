@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route , Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Cards from './components/Cards';
 import MainFooter from './components/MainFooter';
 import SignIn from './components/auth/login';
@@ -15,7 +15,7 @@ import { HiOutlineArrowSmallRight } from "react-icons/hi2";
 import SearchBar from './components/searchSideBar/SearchBar';
 import ProfilePage from './components/userProfile/ProfilePage';
 import Navbar from './components/nav/Navbar';
-
+import HeroVideoDialog from './components/hero/HeroVideoDialog';
 
 
 
@@ -33,7 +33,7 @@ function App() {
   return (
     <div className='flex w-full justify-between flex-col h-full'><Router>
       <div className='  flex left-0 w-full  backdrop-blur-lg  z-50'>
-        <Navbar/>
+        <Navbar />
       </div>
       <Routes>
         {/* Home Page */}
@@ -58,24 +58,41 @@ function App() {
                     <div className='text-3xl font-semibold'>~20k</div>
                     <div className='text-sm font-normal tracking-tight pd-6'>Average daily users</div>
                   </div>
-                 
+
                 </div>
                 <div className='w-full border-b-[1px] border-neutral-200'></div>
                 <div className="flex mt-3 gap-4 items-center">
                   <div className='flex gap-1.5'>
-                    <FaStar size={22}/>
-                    <FaStar size={22}/>
-                    <FaStar size={22}/>
-                    <FaStar size={22}/>
-                    <FaStarHalfStroke size={22}/>
-                    </div>
-                    <div className='text-md font-medium text-neutral-900'>4.5</div>
-                    <div className='text-sm tracking-tighter font-normal text-neutral-500'>Average user rating</div>
+                    <FaStar size={22} />
+                    <FaStar size={22} />
+                    <FaStar size={22} />
+                    <FaStar size={22} />
+                    <FaStarHalfStroke size={22} />
+                  </div>
+                  <div className='text-md font-medium text-neutral-900'>4.5</div>
+                  <div className='text-sm tracking-tighter font-normal text-neutral-500'>Average user rating</div>
                 </div>
 
               </div>
               <div className='w-full h-auto bg-neutral-200  rounded-lg p-4'>
-                <div className='w-full h-full bg-neutral-300 rounded-lg'> </div>
+                <div className='w-full h-full bg-neutral-300 rounded-lg'>
+                  <div className="relative">
+                    <HeroVideoDialog
+                      className="block dark:hidden"
+                      animationStyle="from-center"
+                      videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
+                      thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
+                      thumbnailAlt="Hero Video"
+                    />
+                    <HeroVideoDialog
+                      className="hidden dark:block"
+                      animationStyle="from-center"
+                      videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
+                      thumbnailSrc="https://startup-template-sage.vercel.app/hero-dark.png"
+                      thumbnailAlt="Hero Video"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
             {/* search bar and category section starts */}

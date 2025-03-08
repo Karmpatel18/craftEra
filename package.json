@@ -25,6 +25,7 @@
     "date-fns": "^4.1.0",
     "e": "^0.2.33",
     "lucide-react": "^0.468.0",
+    "motion": "^12.4.10",
     "radix-ui": "^1.0.1",
     "react": "^18.3.1",
     "react-day-picker": "^9.5.1",
