@@ -42,8 +42,8 @@ function App() {
           element={<>
             <div className='flex px-8 font-poppins gap-14 bg-white h-[706px] rounded-md mx-22 py-20'>
               <div className='flex flex-col'>
-                <div className='text-5xl flex text-nowrap  font-medium text-neutral-900 tracking-tighter my-4'>Put people first</div>
-                <div className='flex max-w-lg text-neutral-670 text-md  mt-6 tracking-tight text-wrap'>Fast, user-friendly and engaging - turn HR into people and culture and streamline your daily operations with your own branded app</div>
+                <div className='text-5xl flex text-nowrap  font-medium text-neutral-900 tracking-tighter my-4'>Put artists first</div>
+                <div className='flex max-w-lg text-neutral-670 text-md  mt-6 tracking-tight text-wrap'>transform the way artists sell and shop with Craftera! Elevate your brand with a seamless online marketplace designed to streamline operations and enhance the creator experience. Start your journey with Craftera today!</div>
                 <div className=' mt-8 flex border-[1px] w-full justify-between p-1 rounded-lg border-neutral-300 items-center'>
                   <div className='px-3 tracking-tight'>Get started</div>
                   <div className='bg-neutral-800 text-neutral-50 px-6 py-2 rounded-md font-medium tracking-tight'>watch</div>
@@ -74,25 +74,25 @@ function App() {
                 </div>
 
               </div>
-              <div className='w-full h-auto bg-neutral-200  rounded-lg p-4'>
-                <div className='w-full h-full bg-neutral-300 rounded-lg'>
+              <div className='w-full h-min bg-neutral-200  rounded-lg p-2'>
+                
                   <div className="relative">
                     <HeroVideoDialog
                       className="block dark:hidden"
                       animationStyle="from-center"
                       videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
-                      thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
+                      thumbnailSrc="./assets/hero.png"
                       thumbnailAlt="Hero Video"
                     />
                     <HeroVideoDialog
                       className="hidden dark:block"
                       animationStyle="from-center"
                       videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
-                      thumbnailSrc="https://startup-template-sage.vercel.app/hero-dark.png"
+                      thumbnailSrc="./assets/hero.png"
                       thumbnailAlt="Hero Video"
                     />
                   </div>
-                </div>
+                
               </div>
             </div>
             {/* search bar and category section starts */}
