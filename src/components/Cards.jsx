@@ -29,25 +29,30 @@ function Cards() {
 
   return (
     <>
-    {products.map((product) => (
-    <div className='font-poppins border-[1px] h-min border-neutral-200 bg-neutral-50 rounded-sm  mb-6   duration-500 hover:scale-[101%] hover:shadow-md '
-      key={product.id}
-      onClick={() => navigate(`/product/${product.id}`)}
-      style={{ cursor: 'pointer' }}
-    >
-      <div className=' h-64 w-56 '>
-        <div className='p-2 h-[100%] w-[100%] object-cover '>
-          <img className='rounded-[2px] h-[100%] w-[100%] object-cover ' src="https://images.pexels.com/photos/4272616/pexels-photo-4272616.jpeg?auto=compress&cs=tinysrgb&w=800" />
+      {products.map((product) => (
+        <div className='font-poppins border-[1px] h-min border-neutral-200 bg-neutral-50 rounded-sm  mb-6   duration-500  hover:shadow-lg '
+          key={product.id}
+          onClick={() => navigate(`/product/${product.id}`)}
+          style={{ cursor: 'pointer' }}
+        >
+          <div className=' h-64 w-56 '>
+            <div className='p-2 h-[100%] w-[100%] object-cover '>
+              <img className='rounded-[2px] h-[100%] w-[100%] object-cover ' src="https://images.pexels.com/photos/4272616/pexels-photo-4272616.jpeg?auto=compress&cs=tinysrgb&w=800" />
+            </div>
+
+
+          </div>
+          <div className="flex m-2 mt-0">
+            <div className="flex justify-between w-full">
+              <div className="flex flex-col">
+                <div className=' font-normal tracking-normal text-sm text-neutral-600 '>{product.name.length > 20 ? product.name.slice(0, 20) + "..." : product.name}</div>
+                <div className='font-medium  text-md  text-neutral-900  tracking-tight'>RS.{product.price}</div>
+              </div>
+              <div className='flex bg-neutral-400 hover:bg-neutral-900 transition-all duration-300 justify-center rounded-sm  w-[44px] text-white text-center items-center h-[44px]'>+</div>
+            </div>
+          </div>
         </div>
-
-
-      </div>
-      <div className="ml-2">
-        <div className=' pt-2 font-normal tracking-normal text-sm text-neutral-600 '>{product.name.length > 20 ? product.name.slice(0, 20) + "..." : product.name}</div>
-        <div className='font-medium  text-md  text-neutral-900 mb-1 tracking-tight'>RS.{product.price}</div>
-      </div>
-    </div>
-    ))}
+      ))}
     </>
   )
 }
