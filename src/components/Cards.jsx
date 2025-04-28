@@ -1,22 +1,19 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import React from 'react'
-import BuyCart from './BuyCart'
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FiShoppingBag } from 'react-icons/fi';
+
 function Cards() {
-
-
-
   const [products, setProducts] = useState([]);
-
   const navigate = useNavigate();
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("https://backend-practice-production-7f56.up.railway.app/api/v1/product/preview");
+        const response = await fetch("http://localhost:3001/api/v1/product");
         const data = await response.json();
-        setProducts(data);
+        setProducts(data.products);
       } catch (error) {
         console.error("Error fetching products:", error);
       }
@@ -24,40 +21,67 @@ function Cards() {
     fetchProducts();
   }, []);
 
-
-
+  const addToCart = (product) => {
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const existingItem = cart.find(item => item._id === product._id);
+    
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      cart.push({ ...product, quantity: 1 });
+    }
+    
+    localStorage.setItem('cart', JSON.stringify(cart));
+    // You can add a toast notification here to show success message
+  };
 
   return (
-    <>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
       {products.map((product) => (
-        <div className='font-poppins border-[1px] h-min border-neutral-200 bg-neutral-50 rounded-sm  mb-6   duration-500  hover:shadow-lg '
-          key={product.id}
-          onClick={() => navigate(`/product/${product.id}`)}
-          style={{ cursor: 'pointer' }}
+        <div
+          key={product._id}
+          className="group bg-white rounded-lg overflow-hidden hover:shadow-sm transition-all duration-300 h-[400px] flex flex-col border border-neutral-200"
         >
-          <div className=' h-64 w-56 '>
-            <div className='p-2 h-[100%] w-[100%] object-cover '>
-              <img className='rounded-[2px] h-[100%] w-[100%] object-cover ' src="https://images.pexels.com/photos/4272616/pexels-photo-4272616.jpeg?auto=compress&cs=tinysrgb&w=800" />
-            </div>
-
-
+          <div 
+            className="relative h-64 w-full cursor-pointer overflow-hidden flex-shrink-0"
+            onClick={() => navigate(`/product/${product._id}`)}
+          >
+            <img
+              className="h-full w-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+              src={`http://localhost:3001${product.image}`}
+              alt={product.name}
+            />
           </div>
-          <div className="flex m-2 mt-0">
-            <div className="flex justify-between w-full">
-              <div className="flex flex-col">
-                <div className=' font-normal tracking-normal text-sm text-neutral-600 '>{product.name.length > 20 ? product.name.slice(0, 20) + "..." : product.name}</div>
-                <div className='font-medium  text-md  text-neutral-900  tracking-tight'>RS.{product.price}</div>
+          <div className="p-4 flex flex-col flex-grow">
+            <div className="flex justify-between items-start flex-grow">
+              <div className="flex-1">
+                <h3 className="font-medium text-neutral-900 text-lg mb-1 line-clamp-1">
+                  {product.name}
+                </h3>
+                <p className="text-neutral-600 text-sm mb-2 line-clamp-2 min-h-[2.5rem]">
+                  {product.description}
+                </p>
+                <p className="font-semibold text-lg text-neutral-900">${product.price}</p>
               </div>
-              <div className='flex bg-neutral-400 hover:bg-neutral-900 transition-all duration-300 justify-center rounded-sm  w-[44px] text-white text-center items-center h-[44px]'>+</div>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  addToCart(product);
+                }}
+                className="ml-4 p-2 text-neutral-600 hover:text-neutral-900 transition-colors duration-200 flex-shrink-0"
+                aria-label="Add to cart"
+              >
+                <FiShoppingBag size={20} />
+              </button>
             </div>
           </div>
         </div>
       ))}
-    </>
-  )
+    </div>
+  );
 }
 
-export default Cards
+export default Cards;
 
 {/* <div className='flex flex-row space-x-2 p-2'>
           <button className='bg-gray-800 text-white rounded-lg w-full font-medium px-4 py-2 hover:bg-gray-900 duration-500'>Buy now</button>

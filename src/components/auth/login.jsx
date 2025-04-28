@@ -1,105 +1,155 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
-import axios from "axios";
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { FiMail, FiLock, FiArrowRight } from 'react-icons/fi';
 
-function SignInPage() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
+const SignIn = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent the form from refreshing the page
-    setError(null); // Clear any previous errors
+    e.preventDefault();
+    setIsLoading(true);
+    setError('');
 
     try {
-      // Send POST request to the backend
-      const response = await axios.post("https://backend-practice-production-7f56.up.railway.app/api/v1/user/signin", {
-        username,
-        password,
+      const response = await fetch('http://localhost:3001/api/v1/user/signin', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
       });
 
-      // Extract token from response
-      const { token } = response.data;
+      const data = await response.json();
 
-      // Save the token to localStorage
-      localStorage.setItem("authToken", token);
-
-      // Navigate to the dashboard or homepage after successful login
-      navigate("/");
-      window.location.reload();
-
-    } catch (err) {
-      // Handle errors
-      setError(err.response?.data?.message || "Something went wrong.");
+      if (response.ok) {
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('user', JSON.stringify(data.user));
+        navigate('/');
+        window.location.reload();
+      } else {
+        setError(data.message || 'Login failed');
+      }
+    } catch (error) {
+      setError('An error occurred. Please try again.');
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
-    <>
-      <div className="flex mt-28 mb-24 bg-neutral-200/50 overflow-hidden p-5 rounded-xl w-[1000px] mx-auto my-auto justify-center items-center">
-        <div
-          className="flex-1 rounded-lg bg-center bg-cover"
-          style={{ backgroundImage: "url('/assets/login.jpg')" }}
-        >
-          <img src="" className="h-[600px] object-cover rounded-lg" />
+    <div className="min-h-screen bg-white flex items-center justify-center px-4">
+      <div className="max-w-md w-full space-y-8">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold text-neutral-900">Welcome back</h2>
+          <p className="mt-2 text-neutral-600">Sign in to your account</p>
         </div>
 
-        <div className="flex-1 flex flex-col justify-center items-center">
-          <h1 className="text-2xl mb-5">Sign In</h1>
-
+        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           {error && (
-            <div className="mb-4 p-3 bg-red-200 text-red-700 rounded-md text-sm">
+            <div className="bg-red-50 text-red-500 p-3 rounded-lg text-sm">
               {error}
             </div>
           )}
 
-          <form className="flex flex-col w-4/5" onSubmit={handleSubmit}>
-            <label htmlFor="email" className="text-base mb-1">
-              Email:
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter your email"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-              className="p-2 mb-5 border border-gray-300 rounded-md text-base"
-            />
+          <div className="space-y-4">
+            <div>
+              <label htmlFor="username" className="block text-sm font-medium text-neutral-700 mb-1">
+                Username
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <FiMail className="h-5 w-5 text-neutral-400" />
+                </div>
+                <input
+                  id="username"
+                  name="username"
+                  type="text"
+                  autoComplete="username"
+                  required
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  className="block w-full pl-10 pr-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-neutral-900 focus:border-transparent"
+                  placeholder="Enter your username"
+                />
+              </div>
+            </div>
 
-            <label htmlFor="password" className="text-base mb-1">
-              Password:
-            </label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Enter your password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className="p-2 mb-5 border border-gray-300 rounded-md text-base"
-            />
+            <div>
+              <label htmlFor="password" className="block text-sm font-medium text-neutral-700 mb-1">
+                Password
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <FiLock className="h-5 w-5 text-neutral-400" />
+                </div>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autoComplete="current-password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="block w-full pl-10 pr-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-neutral-900 focus:border-transparent"
+                  placeholder="Enter your password"
+                />
+              </div>
+            </div>
+          </div>
 
-            <button
-              type="submit"
-              className="p-3 text-base text-white bg-neutral-700 rounded-md hover:bg-neutral-800 duration-300"
-            >
-              Sign In
-            </button>
-          </form>
-          <p className="mt-5 text-base">
-            Don&apos;t have an account?{" "}
-            <Link to="/signup" className="text-pink-400 hover:underline">
-              Sign up
-            </Link>
-          </p>
-        </div>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              <input
+                id="remember-me"
+                name="remember-me"
+                type="checkbox"
+                className="h-4 w-4 text-neutral-900 focus:ring-neutral-900 border-neutral-300 rounded"
+              />
+              <label htmlFor="remember-me" className="ml-2 block text-sm text-neutral-600">
+                Remember me
+              </label>
+            </div>
+
+            <div className="text-sm">
+              <a href="#" className="font-medium text-neutral-900 hover:text-neutral-700">
+                Forgot your password?
+              </a>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            disabled={isLoading}
+            className={`w-full flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-lg text-white bg-neutral-900 hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-900 transition-colors duration-200 ${
+              isLoading ? 'opacity-75 cursor-not-allowed' : ''
+            }`}
+          >
+            {isLoading ? (
+              'Signing in...'
+            ) : (
+              <>
+                Sign in
+                <FiArrowRight className="ml-2 h-5 w-5" />
+              </>
+            )}
+          </button>
+
+          <div className="text-center">
+            <p className="text-sm text-neutral-600">
+              Don't have an account?{' '}
+              <Link to="/signup" className="font-medium text-neutral-900 hover:text-neutral-700">
+                Sign up
+              </Link>
+            </p>
+          </div>
+        </form>
       </div>
-    </>
+    </div>
   );
-}
+};
 
-export default SignInPage;
+export default SignIn;
