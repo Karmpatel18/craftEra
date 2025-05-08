@@ -89,9 +89,28 @@ const SignUpPage = () => {
       const data = await response.json();
 
       if (response.ok) {
-        localStorage.setItem('token', data.token);
-        localStorage.setItem('user', JSON.stringify(data.user));
-        navigate('/');
+        // After successful signup, sign in the user
+        const signInResponse = await fetch('http://localhost:3001/api/v1/user/signin', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            username: formData.username.trim(),
+            password: formData.password,
+          }),
+        });
+
+        const signInData = await signInResponse.json();
+
+        if (signInResponse.ok) {
+          localStorage.setItem('token', signInData.token);
+          localStorage.setItem('user', JSON.stringify(signInData.user));
+          navigate('/');
+          window.location.reload();
+        } else {
+          setError(signInData.message || 'Signup successful but login failed');
+        }
       } else {
         setError(data.message || 'Signup failed');
       }

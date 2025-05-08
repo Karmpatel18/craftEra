@@ -5,9 +5,31 @@ import { FiShoppingBag } from "react-icons/fi";
 import useAuth from '../../hooks/useAuth';
 import Cart from '../Cart';
 import UserProfile from '../nav/UserProfile';
+import { useState, useEffect } from 'react';
 
 function Navbar() {
   const isAuthenticated = useAuth();
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    const checkUserData = () => {
+      try {
+        const user = localStorage.getItem('user');
+        if (user) {
+          setUserData(JSON.parse(user));
+        } else {
+          setUserData(null);
+        }
+      } catch (error) {
+        console.error('Error parsing user data:', error);
+        setUserData(null);
+      }
+    };
+
+    checkUserData();
+    window.addEventListener('storage', checkUserData);
+    return () => window.removeEventListener('storage', checkUserData);
+  }, []);
 
   return (
     <nav className="w-full bg-white/80 backdrop-blur-md border-b border-neutral-100">
@@ -66,7 +88,7 @@ function Navbar() {
               Contact
             </NavLink>
 
-            {isAuthenticated && (
+            {isAuthenticated && userData && (
               <NavLink
                 to="/sell"
                 className={({ isActive }) =>
@@ -88,7 +110,7 @@ function Navbar() {
 
           {/* Right Section */}
           <div className="flex items-center">
-            {isAuthenticated ? (
+            {isAuthenticated && userData ? (
               <UserProfile />
             ) : (
               <Link 
@@ -172,7 +194,7 @@ function Navbar() {
             Contact
           </NavLink>
 
-          {isAuthenticated && (
+          {isAuthenticated && userData && (
             <NavLink
               to="/sell"
               className="block px-3 py-2 rounded-md text-base font-medium text-neutral-500 hover:text-neutral-900 hover:bg-neutral-50"

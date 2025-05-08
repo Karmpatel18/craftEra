@@ -69,7 +69,23 @@ function UserProfile() {
         }
 
         const data = await response.json();
+        
+        // Update user data in localStorage
+        const userData = JSON.parse(localStorage.getItem('user'));
+        const updatedUserData = {
+          ...userData,
+          profileImage: data.imageUrl
+        };
+        localStorage.setItem('user', JSON.stringify(updatedUserData));
+        
+        // Update the user state
+        setUser(updatedUserData);
         setProfileImage(data.imageUrl);
+
+        // Dispatch a custom event to notify other components
+        window.dispatchEvent(new CustomEvent('profileImageUpdated', { 
+          detail: { profileImage: data.imageUrl }
+        }));
       } catch (error) {
         console.error('Error uploading image:', error);
         setError('Failed to upload profile image');
@@ -152,7 +168,7 @@ function UserProfile() {
             <div className="absolute -bottom-16 left-8">
               <div className="relative">
                 <img
-                  src={user.profileImage ? `http://localhost:3001${user.profileImage}` : '/assets/default-profile.png'}
+                  src={user.profileImage ? `http://localhost:3001${user.profileImage}` : './assets/profile.png'}
                   alt="Profile"
                   className="w-32 h-32 rounded-full object-cover border-4 border-white"
                 />

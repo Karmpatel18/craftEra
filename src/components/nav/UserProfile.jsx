@@ -9,36 +9,67 @@ const UserProfile = () => {
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const checkUser = () => {
-      try {
-        const userData = localStorage.getItem('user');
-        const token = localStorage.getItem('token');
-        
-        if (!userData || !token) {
+  // Default avatar as a data URL (a simple gray circle)
+  const defaultAvatar = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23E5E7EB'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E";
+
+  const fetchUserData = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        setUser(null);
+        setIsLoading(false);
+        return;
+      }
+
+      const response = await fetch('http://localhost:3001/api/v1/user/profile', {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+
+      if (!response.ok) {
+        if (response.status === 401) {
+          localStorage.removeItem('token');
+          localStorage.removeItem('user');
           setUser(null);
           setIsLoading(false);
           return;
         }
+        throw new Error('Failed to fetch user data');
+      }
 
-        const parsedUser = JSON.parse(userData);
-        if (parsedUser && typeof parsedUser === 'object' && parsedUser.id) {
-          setUser(parsedUser);
-        } else {
-          setUser(null);
-        }
-      } catch (error) {
-        console.error('Error parsing user data:', error);
-        setUser(null);
-      } finally {
-        setIsLoading(false);
+      const userData = await response.json();
+      setUser(userData);
+      // Update localStorage with fresh data
+      localStorage.setItem('user', JSON.stringify(userData));
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+      setUser(null);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchUserData();
+
+    // Listen for profile image updates
+    const handleProfileImageUpdate = (event) => {
+      const userData = JSON.parse(localStorage.getItem('user'));
+      if (userData) {
+        setUser({
+          ...userData,
+          profileImage: event.detail.profileImage
+        });
       }
     };
 
-    checkUser();
-    // Add event listener for storage changes
-    window.addEventListener('storage', checkUser);
-    return () => window.removeEventListener('storage', checkUser);
+    // Add event listeners
+    window.addEventListener('profileImageUpdated', handleProfileImageUpdate);
+    
+    return () => {
+      window.removeEventListener('profileImageUpdated', handleProfileImageUpdate);
+    };
   }, []);
 
   useEffect(() => {
@@ -68,11 +99,15 @@ const UserProfile = () => {
     window.location.reload();
   };
 
-  // Show loading state
+  // Show loading state with default avatar
   if (isLoading) {
     return (
-      <div className="w-8 h-8 rounded-full overflow-hidden border-2 border-neutral-200 bg-neutral-100 flex items-center justify-center">
-        <FiUser className="w-5 h-5 text-neutral-400" />
+      <div className="w-8 h-8 rounded-full overflow-hidden border-2 border-neutral-200">
+        <img
+          src={defaultAvatar}
+          alt="Default Profile"
+          className="w-full h-full object-cover"
+        />
       </div>
     );
   }
@@ -92,11 +127,17 @@ const UserProfile = () => {
               src={`http://localhost:3001${user.profileImage}`}
               alt={user.name}
               className="w-full h-full object-cover"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = defaultAvatar;
+              }}
             />
           ) : (
-            <div className="w-full h-full bg-neutral-100 flex items-center justify-center">
-              <FiUser className="w-5 h-5 text-neutral-400" />
-            </div>
+            <img
+              src={defaultAvatar}
+              alt="Default Profile"
+              className="w-full h-full object-cover"
+            />
           )}
         </div>
       </button>
