@@ -93,7 +93,7 @@ function App() {
                     <SearchBar />
                   </div>
                   <div className="flex mx-28 h-[800px] overflow-scroll border-neutral-200 scroll-m-1">
-                    <div className='flex flex-wrap justify-between border-[1px] border-neutral-200 rounded-sm p-6'>
+                    <div className='flex flex-wrap overflow-scroll mb-8 justify-between border-[1px] border-neutral-200 rounded-sm p-6'>
                       <Cards />
                     </div>
                   </div>

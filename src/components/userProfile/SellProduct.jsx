@@ -202,7 +202,7 @@ function SellProduct() {
                 htmlFor="price"
                 className="block text-sm font-medium text-gray-700"
               >
-                Price ($)
+                Price (₹)
               </label>
               <input
                 type="number"

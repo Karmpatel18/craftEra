@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import { HiMiniArrowLeft } from "react-icons/hi2";
-import { FiShoppingBag, FiHeart, FiShare2, FiCheck, FiTruck, FiShield, FiClock, FiStar } from 'react-icons/fi';
+import {  FiHeart, FiShare2, FiCheck, FiTruck, FiShield, FiClock, FiStar } from 'react-icons/fi';
 
 const LoadingSpinner = () => (
   <div className="fixed inset-0 bg-white/80 backdrop-blur-sm z-50 flex items-center justify-center">
@@ -21,6 +21,80 @@ const BuyCart = () => {
   const [showNotification, setShowNotification] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
+
+  
+    
+    const currency = "INR";
+    const receiptId = "qwsaq1";
+    async function handlePayment(e) {
+        const response = await fetch("http://localhost:3001/create-order", {
+            method: "POST",
+            body: JSON.stringify({
+                amount:finalPrice*100,
+                currency,
+                receipt: receiptId,
+            }),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        const order = await response.json();
+        console.log(order);
+        const options = {
+            key: "rzp_test_PsFeCKHqtC4nDW", // Enter the Key ID generated from the Dashboard
+            amount:finalPrice*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            currency,
+            name: "Acme Corp", //your business name
+            description: "Test Transaction",
+            image: "https://example.com/your_logo",
+            order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            //@ts-expect-error nothing
+            handler: async function (response) {
+                const body = {
+                    ...response,
+                };
+
+                const validateRes = await fetch(
+                    "http://localhost:3001/verify-payment",
+                    {
+                        method: "POST",
+                        body: JSON.stringify(body),
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                    }
+                );
+                const jsonRes = await validateRes.json();
+                console.log(jsonRes);
+            },
+            prefill: {
+                //We recommend using the prefill parameter to auto-fill customer's contact information, especially their phone number
+                name: "Web Dev Matrix", //your customer's name
+                email: "webdevmatrix@example.com",
+                contact: "9000000000", //Provide the customer's phone number for better conversion rates
+            },
+            notes: {
+                address: "Razorpay Corporate Office",
+            },
+            theme: {
+                color: "#3399cc",
+            },
+        };
+        const rzp1 = new window.Razorpay(options);
+        
+        rzp1.on("payment.failed", function (response) {
+            alert(response.error.code);
+            alert(response.error.description);
+            alert(response.error.source);
+            alert(response.error.step);
+            alert(response.error.reason);
+            alert(response.error.metadata.order_id);
+            alert(response.error.metadata.payment_id);
+        });
+        rzp1.open();
+        e.preventDefault();
+    }
+  
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -98,7 +172,7 @@ const BuyCart = () => {
 
   const totalPrice = product.price;
   const gstAmount = totalPrice * 0.18;
-  const finalPrice = totalPrice + gstAmount;
+  const finalPrice = (totalPrice + gstAmount);
 
   return (
     <div className="min-h-screen bg-white">
@@ -161,7 +235,7 @@ const BuyCart = () => {
             <div className="border border-neutral-200 rounded-lg p-6 space-y-4">
               <div className="flex justify-between items-center">
                 <span className="text-neutral-600">Price:</span>
-                <span className="text-xl font-semibold text-neutral-900">${product.price}</span>
+                <span className="text-xl font-semibold text-neutral-900">₹{product.price}</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-neutral-600">Category:</span>
@@ -173,12 +247,12 @@ const BuyCart = () => {
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-neutral-600">GST (18%):</span>
-                <span className="font-medium text-neutral-900">${gstAmount.toFixed(2)}</span>
+                <span className="font-medium text-neutral-900">₹{gstAmount.toFixed(2)}</span>
               </div>
               <div className="border-t pt-4">
                 <div className="flex justify-between items-center">
                   <span className="text-lg font-semibold text-neutral-900">Final Price:</span>
-                  <span className="text-2xl font-bold text-neutral-900">${finalPrice.toFixed(2)}</span>
+                  <span className="text-2xl font-bold text-neutral-900">₹{finalPrice.toFixed(2)}</span>
                 </div>
               </div>
             </div>
@@ -193,6 +267,7 @@ const BuyCart = () => {
               </button>
               <button 
                 className="flex-1 border border-neutral-900 text-neutral-900 py-4 rounded-lg hover:bg-neutral-50 transition-colors duration-200 font-medium"
+                onClick={handlePayment}
               >
                 Buy Now
               </button>

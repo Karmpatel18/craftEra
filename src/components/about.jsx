@@ -1,14 +1,9 @@
 import { motion } from 'framer-motion';
-import { FiUsers, FiAward, FiHeart, FiGlobe, FiImage } from 'react-icons/fi';
+import { FiImage } from 'react-icons/fi';
 import { HiLightBulb, HiCode, HiColorSwatch, HiSpeakerphone, HiCog } from 'react-icons/hi';
 
 const AboutUs = () => {
-  const stats = [
-    { number: '10K+', label: 'Artists', icon: FiUsers },
-    { number: '50K+', label: 'Artworks', icon: FiAward },
-    { number: '100K+', label: 'Happy Customers', icon: FiHeart },
-    { number: '150+', label: 'Countries', icon: FiGlobe },
-  ];
+  
 
   const features = [
     {
@@ -89,29 +84,7 @@ const AboutUs = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-neutral-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="flex justify-center mb-4">
-                  <stat.icon className="w-8 h-8 text-neutral-900" />
-                </div>
-                <div className="text-3xl font-bold text-neutral-900 mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-sm text-neutral-600">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Our Story Section */}
       <section className="py-20">

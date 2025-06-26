@@ -61,7 +61,7 @@ function Cards() {
                 <p className="text-neutral-600 text-sm mb-2 line-clamp-2 min-h-[2.5rem]">
                   {product.description}
                 </p>
-                <p className="font-semibold text-lg text-neutral-900">${product.price}</p>
+                <p className="font-semibold text-lg text-neutral-900">₹{product.price}</p>
               </div>
               <button
                 onClick={(e) => {

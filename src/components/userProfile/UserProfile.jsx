@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Camera, Settings, LogOut, DollarSign, Plus } from 'lucide-react';
+import { Camera, LogOut, DollarSign, Plus } from 'lucide-react';
 
 function UserProfile() {
   const [user, setUser] = useState(null);
